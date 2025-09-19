@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            display: flex;
+            gap: 2rem;
+        }
+        article {
+            flex: 2;
+        }
+        aside {
+            flex: 1;
+            background-color: #f4f4f4;
+            padding: 1rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning HTML5 Semantic Elements</h1>
+        <nav>
+            <ul>
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#semantic">Semantic Elements</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <section id="intro">
+                <h2>Introduction to Semantic HTML</h2>
+                <p>Semantic HTML elements clearly describe their meaning in a human- and machine-readable way. They provide structure and meaning to your content, making it more accessible and SEO-friendly.</p>
+                
+                <figure>
+                    <div style="border: 1px solid #ccc; padding: 20px; text-align: center; background-color: #f9f9f9;">
+                        [This would be an image showing HTML5 semantic layout]
+                    </div>
+                    <figcaption>HTML5 semantic elements layout structure</figcaption>
+                </figure>
+            </section>
+
+            <section id="semantic">
+                <h2>Common Semantic Elements</h2>
+                
+                <h3>Page Structure Elements</h3>
+                <ul>
+                    <li><strong>&lt;header&gt;</strong> - Contains introductory content or navigation links</li>
+                    <li><strong>&lt;nav&gt;</strong> - Contains navigation links</li>
+                    <li><strong>&lt;main&gt;</strong> - Contains the main content of the page</li>
+                    <li><strong>&lt;article&gt;</strong> - Contains independent, self-contained content</li>
+                    <li><strong>&lt;section&gt;</strong> - Groups related content together</li>
+                    <li><strong>&lt;aside&gt;</strong> - Contains content aside from the main content (sidebar)</li>
+                    <li><strong>&lt;footer&gt;</strong> - Contains footer information</li>
+                </ul>
+
+                <h3>Content Elements</h3>
+                <ul>
+                    <li><strong>&lt;figure&gt;</strong> - Groups media content with caption</li>
+                    <li><strong>&lt;figcaption&gt;</strong> - Provides caption for figure</li>
+                    <li><strong>&lt;time&gt;</strong> - Represents a specific time</li>
+                    <li><strong>&lt;address&gt;</strong> - Contact information</li>
+                    <li><strong>&lt;details&gt;</strong> - Collapsible content</li>
+                    <li><strong>&lt;summary&gt;</strong> - Summary/heading for details element</li>
+                </ul>
+            </section>
+
+            <section id="examples">
+                <h2>Interactive Examples</h2>
+                
+                <h3>Time Element</h3>
+                <p>This article was published on <time datetime="2023-12-15T10:30:00">December 15, 2023 at 10:30 AM</time>.</p>
+                
+                <h3>Details and Summary</h3>
+                <details>
+                    <summary>Click here to learn more about semantic HTML benefits</summary>
+                    <p><strong>Benefits of semantic HTML:</strong></p>
+                    <ul>
+                        <li>Better accessibility for screen readers</li>
+                        <li>Improved SEO (Search Engine Optimization)</li>
+                        <li>Cleaner, more maintainable code</li>
+                        <li>Better browser understanding of content structure</li>
+                        <li>Enhanced user experience</li>
+                    </ul>
+                </details>
+
+                <h3>Address Element</h3>
+                <address>
+                    <strong>Contact Information:</strong><br>
+                    HTML Learning Center<br>
+                    123 Web Development Street<br>
+                    Code City, CC 12345<br>
+                    Email: <a href="mailto:learn@htmlcenter.edu">learn@htmlcenter.edu</a><br>
+                    Phone: <a href="tel:+1234567890">(123) 456-7890</a>
+                </address>
+            </section>
+        </article>
+
+        <aside>
+            <h3>Quick Tips</h3>
+            <p><strong>Remember:</strong> Semantic elements don't change the appearance of your page by default - they provide meaning!</p>
+            
+            <h4>Best Practices:</h4>
+            <ol>
+                <li>Use semantic elements instead of generic divs when possible</li>
+                <li>Each page should have only one &lt;main&gt; element</li>
+                <li>Use &lt;article&gt; for content that could stand alone</li>
+                <li>Use &lt;section&gt; to group related content</li>
+                <li>Always include proper headings (h1, h2, etc.)</li>
+            </ol>
+
+            <h4>Related Resources:</h4>
+            <ul>
+                <li><a href="#" target="_blank">MDN Web Docs</a></li>
+                <li><a href="#" target="_blank">W3C HTML Validator</a></li>
+                <li><a href="#" target="_blank">WAVE Accessibility Checker</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 HTML Learning Repository. Created for educational purposes.</p>
+        <p>
+            <small>
+                This page demonstrates semantic HTML5 elements in action. 
+                View the source code to see how each element is used!
+            </small>
+        </p>
+    </footer>
+</body>
+</html>
