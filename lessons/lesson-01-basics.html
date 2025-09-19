@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: HTML Basics and Document Structure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .exercise {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+        }
+        .navigation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="../README.md">← Back to Tutorial Home</a> |
+        <a href="lesson-02-text.html">Next: Text Elements →</a>
+    </div>
+
+    <h1>Lesson 1: HTML Basics and Document Structure</h1>
+
+    <h2>🎯 What You'll Learn</h2>
+    <ul>
+        <li>What is HTML and how it works</li>
+        <li>Basic HTML document structure</li>
+        <li>Essential HTML tags</li>
+        <li>How to create your first web page</li>
+    </ul>
+
+    <h2>📖 What is HTML?</h2>
+    <p><strong>HTML</strong> stands for <strong>HyperText Markup Language</strong>. It's the standard language used to create web pages. HTML uses "tags" to define different parts of a web page, like headings, paragraphs, links, and images.</p>
+
+    <div class="highlight">
+        <strong>Think of HTML like the skeleton of a house:</strong><br>
+        - HTML provides the basic structure<br>
+        - CSS adds the styling (paint, decoration)<br>
+        - JavaScript adds interactive behavior (lights, doors)
+    </div>
+
+    <h2>🏗️ Basic HTML Document Structure</h2>
+    <p>Every HTML document follows the same basic structure:</p>
+
+    <div class="code-example">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Web Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is my first paragraph!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </div>
+
+    <h2>🔍 Breaking Down the Structure</h2>
+
+    <h3>1. &lt;!DOCTYPE html&gt;</h3>
+    <p>This tells the browser that this is an HTML5 document. Always put this at the very top!</p>
+
+    <h3>2. &lt;html&gt;</h3>
+    <p>This is the root element that contains all other elements on the page.</p>
+
+    <h3>3. &lt;head&gt;</h3>
+    <p>Contains information <em>about</em> the page that isn't displayed on the page itself:</p>
+    <ul>
+        <li><strong>&lt;meta charset="UTF-8"&gt;</strong> - Tells the browser how to interpret characters</li>
+        <li><strong>&lt;meta name="viewport"...&gt;</strong> - Makes the page mobile-friendly</li>
+        <li><strong>&lt;title&gt;</strong> - Sets the title that appears in the browser tab</li>
+    </ul>
+
+    <h3>4. &lt;body&gt;</h3>
+    <p>Contains all the content that visitors will see on your web page.</p>
+
+    <h2>📝 Understanding HTML Tags</h2>
+    <p>HTML tags are keywords surrounded by angle brackets: <code>&lt;tagname&gt;</code></p>
+
+    <div class="highlight">
+        <strong>Key Points about Tags:</strong><br>
+        • Most tags come in pairs: opening tag <code>&lt;h1&gt;</code> and closing tag <code>&lt;/h1&gt;</code><br>
+        • The closing tag has a forward slash: <code>&lt;/tagname&gt;</code><br>
+        • Content goes between the opening and closing tags<br>
+        • Some tags are self-closing: <code>&lt;br&gt;</code> or <code>&lt;img&gt;</code>
+    </div>
+
+    <h2>🎨 Your First HTML Elements</h2>
+
+    <h3>Headings</h3>
+    <p>HTML has 6 levels of headings, from most important (h1) to least important (h6):</p>
+    <div class="code-example">
+&lt;h1&gt;Main Title (Biggest)&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+&lt;h4&gt;Minor Heading&lt;/h4&gt;
+&lt;h5&gt;Small Heading&lt;/h5&gt;
+&lt;h6&gt;Smallest Heading&lt;/h6&gt;
+    </div>
+
+    <h3>Paragraphs</h3>
+    <div class="code-example">
+&lt;p&gt;This is a paragraph of text. It can contain multiple sentences and will automatically wrap to the next line when needed.&lt;/p&gt;
+    </div>
+
+    <div class="exercise">
+        <h3>🏋️ Exercise 1: Create Your First HTML Page</h3>
+        <ol>
+            <li>Open a text editor (Notepad, VS Code, etc.)</li>
+            <li>Copy the basic HTML structure from above</li>
+            <li>Change the title to "My First Web Page"</li>
+            <li>Add an h1 heading with your name</li>
+            <li>Add a paragraph introducing yourself</li>
+            <li>Save the file as "my-first-page.html"</li>
+            <li>Open the file in your web browser</li>
+        </ol>
+        <p><strong>Expected result:</strong> You should see your name as a big heading and your introduction as regular text below it!</p>
+    </div>
+
+    <h2>🔧 Tips for Success</h2>
+    <ul>
+        <li><strong>Use proper indentation</strong> - Indent nested elements to make your code readable</li>
+        <li><strong>Always close your tags</strong> - Every opening tag needs a closing tag</li>
+        <li><strong>Use lowercase</strong> - While HTML isn't case-sensitive, use lowercase for consistency</li>
+        <li><strong>Test in a browser</strong> - Always check how your code looks in a web browser</li>
+    </ul>
+
+    <h2>🐛 Common Beginner Mistakes</h2>
+    <ul>
+        <li>Forgetting the closing tag</li>
+        <li>Forgetting the &lt;!DOCTYPE html&gt; declaration</li>
+        <li>Putting content outside the &lt;body&gt; tag</li>
+        <li>Nesting tags incorrectly</li>
+    </ul>
+
+    <div class="highlight">
+        <strong>Remember:</strong> Don't worry about making your page look beautiful yet! In this lesson, we're just learning the basic structure. We'll add styling in later lessons.
+    </div>
+
+    <h2>✅ Lesson 1 Checklist</h2>
+    <p>Before moving to the next lesson, make sure you can:</p>
+    <ul>
+        <li>☐ Explain what HTML is and what it's used for</li>
+        <li>☐ Write the basic HTML document structure from memory</li>
+        <li>☐ Create a simple HTML page with headings and paragraphs</li>
+        <li>☐ Save and open an HTML file in a web browser</li>
+    </ul>
+
+    <div class="navigation">
+        <a href="../README.md">← Back to Tutorial Home</a> |
+        <a href="lesson-02-text.html">Next: Text Elements →</a>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+        <p>HTML Tutorial for Beginners | Lesson 1 of 10</p>
+    </footer>
+</body>
+</html>
