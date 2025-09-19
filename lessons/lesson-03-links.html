@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Links and Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .example-output {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .exercise {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+        }
+        .navigation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="lesson-02-text.html">← Previous: Text Elements</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-04-images.html">Next: Images →</a>
+    </div>
+
+    <h1>Lesson 3: Links and Navigation</h1>
+
+    <h2>🎯 What You'll Learn</h2>
+    <ul>
+        <li>How to create links to other websites</li>
+        <li>Linking to other pages on your website</li>
+        <li>Creating internal page navigation with anchors</li>
+        <li>Email and phone links</li>
+        <li>Download links</li>
+        <li>Link attributes and best practices</li>
+    </ul>
+
+    <h2>🔗 Basic Link Syntax</h2>
+    <p>Links are created using the <code>&lt;a&gt;</code> (anchor) element with the <code>href</code> attribute:</p>
+
+    <div class="code-example">
+&lt;a href="https://www.google.com"&gt;Visit Google&lt;/a&gt;
+    </div>
+
+    <div class="example-output">
+        <a href="https://www.google.com">Visit Google</a>
+    </div>
+
+    <div class="highlight">
+        <strong>Anatomy of a Link:</strong><br>
+        • <code>&lt;a&gt;</code> = anchor element<br>
+        • <code>href</code> = hypertext reference (where the link goes)<br>
+        • Text between tags = what the user sees and clicks on
+    </div>
+
+    <h2>🌐 Types of Links</h2>
+
+    <h3>1. External Links (to other websites)</h3>
+    <div class="code-example">
+&lt;a href="https://www.wikipedia.org"&gt;Wikipedia&lt;/a&gt;
+&lt;a href="https://www.github.com"&gt;GitHub&lt;/a&gt;
+&lt;a href="https://developer.mozilla.org"&gt;MDN Web Docs&lt;/a&gt;
+    </div>
+
+    <div class="example-output">
+        <a href="https://www.wikipedia.org">Wikipedia</a><br>
+        <a href="https://www.github.com">GitHub</a><br>
+        <a href="https://developer.mozilla.org">MDN Web Docs</a>
+    </div>
+
+    <h3>2. Internal Links (to other pages on your site)</h3>
+    <div class="code-example">
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+&lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+&lt;a href="../index.html"&gt;Home&lt;/a&gt;
+    </div>
+
+    <div class="example-output">
+        <a href="about.html">About Us</a><br>
+        <a href="contact.html">Contact</a><br>
+        <a href="../index.html">Home</a>
+    </div>
+
+    <h3>3. Anchor Links (to sections on the same page)</h3>
+    <div class="code-example">
+&lt;!-- Create an anchor --&gt;
+&lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+
+&lt;!-- Link to the anchor --&gt;
+&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;
+&lt;a href="#top"&gt;Back to top&lt;/a&gt;
+    </div>
+
+    <div class="example-output">
+        <a href="#section1">Go to Section 1</a><br>
+        <a href="#top">Back to top</a>
+    </div>
+
+    <h2>📧 Special Types of Links</h2>
+
+    <h3>Email Links</h3>
+    <div class="code-example">
+&lt;a href="mailto:someone@example.com"&gt;Send Email&lt;/a&gt;
+&lt;a href="mailto:help@company.com?subject=Help Request&amp;body=Hello, I need help with..."&gt;Email with Subject&lt;/a&gt;
+    </div>
+
+    <div class="example-output">
+        <a href="mailto:someone@example.com">Send Email</a><br>
+        <a href="mailto:help@company.com?subject=Help Request&body=Hello, I need help with...">Email with Subject</a>
+    </div>
+
+    <h3>Phone Links</h3>
+    <div class="code-example">
+&lt;a href="tel:+1234567890"&gt;Call us: (123) 456-7890&lt;/a&gt;
+    </div>
+
+    <div class="example-output">
+        <a href="tel:+1234567890">Call us: (123) 456-7890</a>
+    </div>
+
+    <h3>Download Links</h3>
+    <div class="code-example">
+&lt;a href="document.pdf" download&gt;Download PDF&lt;/a&gt;
+&lt;a href="image.jpg" download="my-image.jpg"&gt;Download Image&lt;/a&gt;
+    </div>
+
+    <h2>🎛️ Link Attributes</h2>
+
+    <h3>Target Attribute</h3>
+    <p>Controls where the link opens:</p>
+
+    <div class="code-example">
+&lt;!-- Opens in same window/tab (default) --&gt;
+&lt;a href="https://www.example.com"&gt;Same Window&lt;/a&gt;
+
+&lt;!-- Opens in new tab/window --&gt;
+&lt;a href="https://www.example.com" target="_blank"&gt;New Tab&lt;/a&gt;
+
+&lt;!-- Opens in parent frame (for frames) --&gt;
+&lt;a href="page.html" target="_parent"&gt;Parent Frame&lt;/a&gt;
+
+&lt;!-- Opens in top-level window --&gt;
+&lt;a href="page.html" target="_top"&gt;Top Window&lt;/a&gt;
+    </div>
+
+    <div class="warning">
+        <strong>Security Note:</strong> When using <code>target="_blank"</code>, add <code>rel="noopener noreferrer"</code> for security:
+        <br><code>&lt;a href="https://external-site.com" target="_blank" rel="noopener noreferrer"&gt;External Link&lt;/a&gt;</code>
+    </div>
+
+    <h3>Title Attribute</h3>
+    <div class="code-example">
+&lt;a href="https://www.example.com" title="Visit Example.com for more information"&gt;Example Site&lt;/a&gt;
+    </div>
+
+    <div class="example-output">
+        <a href="https://www.example.com" title="Visit Example.com for more information">Example Site</a> (hover to see tooltip)
+    </div>
+
+    <h2>🧭 Creating Navigation Menus</h2>
+
+    <div class="code-example">
+&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="about.html"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="services.html"&gt;Services&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+    </div>
+
+    <div class="example-output">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <h2>📍 Breadcrumb Navigation</h2>
+    <div class="code-example">
+&lt;nav aria-label="breadcrumb"&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/products"&gt;Products&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/products/laptops"&gt;Laptops&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;MacBook Pro&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;
+    </div>
+
+    <h2>🎨 Styling Link States with CSS</h2>
+    <p>You can style different link states (we'll learn more about CSS later):</p>
+
+    <div class="code-example">
+&lt;style&gt;
+a:link { color: blue; }          /* unvisited link */
+a:visited { color: purple; }     /* visited link */
+a:hover { color: red; }          /* mouse over link */
+a:active { color: yellow; }      /* selected link */
+&lt;/style&gt;
+    </div>
+
+    <div class="exercise">
+        <h3>🏋️ Exercise 3: Building a Simple Website</h3>
+        <p>Create a small website with multiple pages:</p>
+        <ol>
+            <li><strong>Create index.html</strong> (home page) with:
+                <ul>
+                    <li>A welcome heading</li>
+                    <li>Navigation menu linking to all pages</li>
+                    <li>A paragraph about the website</li>
+                </ul>
+            </li>
+            <li><strong>Create about.html</strong> with:
+                <ul>
+                    <li>Information about yourself or a fictional company</li>
+                    <li>Navigation back to home</li>
+                    <li>An email link</li>
+                </ul>
+            </li>
+            <li><strong>Create contact.html</strong> with:
+                <ul>
+                    <li>Contact information</li>
+                    <li>Phone number as clickable link</li>
+                    <li>Email link with pre-filled subject</li>
+                    <li>Link to external map service</li>
+                </ul>
+            </li>
+            <li><strong>Add anchor links</strong> within one page to jump between sections</li>
+        </ol>
+        <p><strong>Test:</strong> Make sure all links work and you can navigate between all pages!</p>
+    </div>
+
+    <h2>🛣️ File Path Understanding</h2>
+
+    <h3>Relative Paths</h3>
+    <div class="code-example">
+&lt;!-- Same folder --&gt;
+&lt;a href="page2.html"&gt;Page 2&lt;/a&gt;
+
+&lt;!-- Subfolder --&gt;
+&lt;a href="images/photo.html"&gt;Photo Page&lt;/a&gt;
+
+&lt;!-- Parent folder --&gt;
+&lt;a href="../index.html"&gt;Back to Home&lt;/a&gt;
+
+&lt;!-- Two levels up --&gt;
+&lt;a href="../../home.html"&gt;Home&lt;/a&gt;
+    </div>
+
+    <h3>Absolute Paths</h3>
+    <div class="code-example">
+&lt;!-- From root of website --&gt;
+&lt;a href="/index.html"&gt;Home&lt;/a&gt;
+&lt;a href="/about/team.html"&gt;Team Page&lt;/a&gt;
+
+&lt;!-- Full URL --&gt;
+&lt;a href="https://www.mysite.com/page.html"&gt;Full URL&lt;/a&gt;
+    </div>
+
+    <h2>♿ Accessibility Best Practices</h2>
+    <ul>
+        <li><strong>Use descriptive link text:</strong> "Read our privacy policy" instead of "Click here"</li>
+        <li><strong>Indicate external links:</strong> Let users know when links leave your site</li>
+        <li><strong>Use focus indicators:</strong> Make sure links are keyboard accessible</li>
+        <li><strong>Provide context:</strong> Use title attributes for additional information</li>
+    </ul>
+
+    <div class="code-example">
+&lt;!-- Good link text --&gt;
+&lt;a href="privacy.html"&gt;Read our privacy policy&lt;/a&gt;
+
+&lt;!-- Bad link text --&gt;
+&lt;a href="privacy.html"&gt;Click here&lt;/a&gt;
+    </div>
+
+    <h2>🐛 Common Link Mistakes</h2>
+    <ul>
+        <li><strong>Missing protocol:</strong> Use <code>https://</code> for external links</li>
+        <li><strong>Broken file paths:</strong> Check your folder structure</li>
+        <li><strong>Forgetting closing tags:</strong> Always close <code>&lt;/a&gt;</code></li>
+        <li><strong>Generic link text:</strong> Avoid "click here" or "read more"</li>
+        <li><strong>Security issues:</strong> Use <code>rel="noopener"</code> with <code>target="_blank"</code></li>
+    </ul>
+
+    <h2 id="section1">📊 This is Section 1 (for anchor demo)</h2>
+    <p>This section demonstrates how anchor links work. You can link to this section using <code>#section1</code>!</p>
+
+    <h2>✅ Lesson 3 Checklist</h2>
+    <p>Before moving to the next lesson, make sure you can:</p>
+    <ul>
+        <li>☐ Create external links to other websites</li>
+        <li>☐ Link between pages on your own website</li>
+        <li>☐ Create anchor links within a page</li>
+        <li>☐ Make email and phone links</li>
+        <li>☐ Use target="_blank" safely with rel="noopener"</li>
+        <li>☐ Understand relative vs absolute file paths</li>
+        <li>☐ Create accessible, descriptive link text</li>
+    </ul>
+
+    <div class="navigation">
+        <a href="lesson-02-text.html">← Previous: Text Elements</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-04-images.html">Next: Images →</a>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+        <p>HTML Tutorial for Beginners | Lesson 3 of 10</p>
+    </footer>
+</body>
+</html>

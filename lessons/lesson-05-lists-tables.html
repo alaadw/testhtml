@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 5: Lists and Tables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .example-output {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .exercise {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+        }
+        .navigation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .demo-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .demo-table th, .demo-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .demo-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="lesson-04-images.html">← Previous: Images</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-06-forms.html">Next: Forms →</a>
+    </div>
+
+    <h1>Lesson 5: Lists and Tables</h1>
+
+    <h2>🎯 What You'll Learn</h2>
+    <ul>
+        <li>How to create different types of lists</li>
+        <li>Nesting lists within lists</li>
+        <li>Building tables with headers and data</li>
+        <li>Table accessibility and semantic structure</li>
+        <li>Styling lists and tables with CSS</li>
+        <li>When to use lists vs tables</li>
+    </ul>
+
+    <h2>📋 HTML Lists</h2>
+
+    <h3>Unordered Lists (Bullet Points)</h3>
+    <p>Use <code>&lt;ul&gt;</code> for lists where order doesn't matter:</p>
+
+    <div class="code-example">
+&lt;ul&gt;
+    &lt;li&gt;Apples&lt;/li&gt;
+    &lt;li&gt;Bananas&lt;/li&gt;
+    &lt;li&gt;Oranges&lt;/li&gt;
+    &lt;li&gt;Grapes&lt;/li&gt;
+&lt;/ul&gt;
+    </div>
+
+    <div class="example-output">
+        <ul>
+            <li>Apples</li>
+            <li>Bananas</li>
+            <li>Oranges</li>
+            <li>Grapes</li>
+        </ul>
+    </div>
+
+    <h3>Ordered Lists (Numbered)</h3>
+    <p>Use <code>&lt;ol&gt;</code> for lists where order is important:</p>
+
+    <div class="code-example">
+&lt;ol&gt;
+    &lt;li&gt;Preheat oven to 350°F&lt;/li&gt;
+    &lt;li&gt;Mix dry ingredients&lt;/li&gt;
+    &lt;li&gt;Add wet ingredients&lt;/li&gt;
+    &lt;li&gt;Bake for 25 minutes&lt;/li&gt;
+&lt;/ol&gt;
+    </div>
+
+    <div class="example-output">
+        <ol>
+            <li>Preheat oven to 350°F</li>
+            <li>Mix dry ingredients</li>
+            <li>Add wet ingredients</li>
+            <li>Bake for 25 minutes</li>
+        </ol>
+    </div>
+
+    <h3>Description Lists</h3>
+    <p>Use <code>&lt;dl&gt;</code> for term-definition pairs:</p>
+
+    <div class="code-example">
+&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
+    
+    &lt;dt&gt;CSS&lt;/dt&gt;
+    &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
+    
+    &lt;dt&gt;JavaScript&lt;/dt&gt;
+    &lt;dd&gt;Programming language for web interactivity&lt;/dd&gt;
+&lt;/dl&gt;
+    </div>
+
+    <div class="example-output">
+        <dl>
+            <dt><strong>HTML</strong></dt>
+            <dd>HyperText Markup Language</dd>
+            
+            <dt><strong>CSS</strong></dt>
+            <dd>Cascading Style Sheets</dd>
+            
+            <dt><strong>JavaScript</strong></dt>
+            <dd>Programming language for web interactivity</dd>
+        </dl>
+    </div>
+
+    <h2>🏗️ Nested Lists</h2>
+    <p>You can put lists inside other lists:</p>
+
+    <div class="code-example">
+&lt;ul&gt;
+    &lt;li&gt;Fruits
+        &lt;ul&gt;
+            &lt;li&gt;Apples
+                &lt;ul&gt;
+                    &lt;li&gt;Red Delicious&lt;/li&gt;
+                    &lt;li&gt;Granny Smith&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;Bananas&lt;/li&gt;
+            &lt;li&gt;Oranges&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Vegetables
+        &lt;ul&gt;
+            &lt;li&gt;Carrots&lt;/li&gt;
+            &lt;li&gt;Broccoli&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+    </div>
+
+    <div class="example-output">
+        <ul>
+            <li>Fruits
+                <ul>
+                    <li>Apples
+                        <ul>
+                            <li>Red Delicious</li>
+                            <li>Granny Smith</li>
+                        </ul>
+                    </li>
+                    <li>Bananas</li>
+                    <li>Oranges</li>
+                </ul>
+            </li>
+            <li>Vegetables
+                <ul>
+                    <li>Carrots</li>
+                    <li>Broccoli</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <h2>🎨 List Styling Options</h2>
+
+    <h3>Ordered List Types</h3>
+    <div class="code-example">
+&lt;!-- Numbers (default) --&gt;
+&lt;ol type="1"&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Letters --&gt;
+&lt;ol type="A"&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Roman numerals --&gt;
+&lt;ol type="I"&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Start from specific number --&gt;
+&lt;ol start="5"&gt;
+    &lt;li&gt;Fifth item&lt;/li&gt;
+    &lt;li&gt;Sixth item&lt;/li&gt;
+&lt;/ol&gt;
+    </div>
+
+    <div class="example-output">
+        <p><strong>Numbers:</strong></p>
+        <ol type="1">
+            <li>First item</li>
+            <li>Second item</li>
+        </ol>
+        
+        <p><strong>Letters:</strong></p>
+        <ol type="A">
+            <li>First item</li>
+            <li>Second item</li>
+        </ol>
+        
+        <p><strong>Roman numerals:</strong></p>
+        <ol type="I">
+            <li>First item</li>
+            <li>Second item</li>
+        </ol>
+        
+        <p><strong>Starting from 5:</strong></p>
+        <ol start="5">
+            <li>Fifth item</li>
+            <li>Sixth item</li>
+        </ol>
+    </div>
+
+    <h2>📊 HTML Tables</h2>
+
+    <h3>Basic Table Structure</h3>
+    <div class="code-example">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;New York&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Sarah&lt;/td&gt;
+        &lt;td&gt;30&lt;/td&gt;
+        &lt;td&gt;London&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+    </div>
+
+    <div class="example-output">
+        <table class="demo-table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>25</td>
+                <td>New York</td>
+            </tr>
+            <tr>
+                <td>Sarah</td>
+                <td>30</td>
+                <td>London</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="highlight">
+        <strong>Table Elements:</strong><br>
+        • <code>&lt;table&gt;</code> = Contains the entire table<br>
+        • <code>&lt;tr&gt;</code> = Table row<br>
+        • <code>&lt;th&gt;</code> = Table header cell<br>
+        • <code>&lt;td&gt;</code> = Table data cell
+    </div>
+
+    <h3>Semantic Table Structure</h3>
+    <div class="code-example">
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+            &lt;th&gt;Stock&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Laptop&lt;/td&gt;
+            &lt;td&gt;$999&lt;/td&gt;
+            &lt;td&gt;15&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Mouse&lt;/td&gt;
+            &lt;td&gt;$25&lt;/td&gt;
+            &lt;td&gt;50&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Total&lt;/th&gt;
+            &lt;td&gt;$1,024&lt;/td&gt;
+            &lt;td&gt;65&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+    </div>
+
+    <div class="example-output">
+        <table class="demo-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Laptop</td>
+                    <td>$999</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Mouse</td>
+                    <td>$25</td>
+                    <td>50</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <td>$1,024</td>
+                    <td>65</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <h2>🔗 Spanning Cells</h2>
+
+    <h3>Column Span (colspan)</h3>
+    <div class="code-example">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th colspan="3"&gt;Sales Report&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Month&lt;/th&gt;
+        &lt;th&gt;Revenue&lt;/th&gt;
+        &lt;th&gt;Growth&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;January&lt;/td&gt;
+        &lt;td&gt;$10,000&lt;/td&gt;
+        &lt;td&gt;5%&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+    </div>
+
+    <div class="example-output">
+        <table class="demo-table">
+            <tr>
+                <th colspan="3">Sales Report</th>
+            </tr>
+            <tr>
+                <th>Month</th>
+                <th>Revenue</th>
+                <th>Growth</th>
+            </tr>
+            <tr>
+                <td>January</td>
+                <td>$10,000</td>
+                <td>5%</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>Row Span (rowspan)</h3>
+    <div class="code-example">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Department&lt;/th&gt;
+        &lt;th&gt;Employee&lt;/th&gt;
+        &lt;th&gt;Role&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;Engineering&lt;/td&gt;
+        &lt;td&gt;Alice&lt;/td&gt;
+        &lt;td&gt;Senior Developer&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Bob&lt;/td&gt;
+        &lt;td&gt;Junior Developer&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+    </div>
+
+    <div class="example-output">
+        <table class="demo-table">
+            <tr>
+                <th>Department</th>
+                <th>Employee</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td rowspan="2">Engineering</td>
+                <td>Alice</td>
+                <td>Senior Developer</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>Junior Developer</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>♿ Table Accessibility</h2>
+
+    <h3>Table Caption</h3>
+    <div class="code-example">
+&lt;table&gt;
+    &lt;caption&gt;Monthly Sales Data for Q1 2024&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Month&lt;/th&gt;
+            &lt;th&gt;Sales&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;January&lt;/td&gt;
+            &lt;td&gt;$15,000&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+    </div>
+
+    <h3>Header Scope</h3>
+    <div class="code-example">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th scope="col"&gt;Name&lt;/th&gt;
+        &lt;th scope="col"&gt;Math&lt;/th&gt;
+        &lt;th scope="col"&gt;Science&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;th scope="row"&gt;Alice&lt;/th&gt;
+        &lt;td&gt;85&lt;/td&gt;
+        &lt;td&gt;92&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+    </div>
+
+    <div class="exercise">
+        <h3>🏋️ Exercise 5: Creating a Restaurant Menu</h3>
+        <p>Create a restaurant menu page using lists and tables:</p>
+        
+        <h4>Part 1: Menu Categories (Lists)</h4>
+        <ol>
+            <li>Create "menu.html"</li>
+            <li>Use an unordered list for main categories (Appetizers, Main Courses, Desserts)</li>
+            <li>For each category, create a nested ordered list with dishes</li>
+            <li>Use a description list for dietary information (Vegetarian, Gluten-Free, etc.)</li>
+        </ol>
+
+        <h4>Part 2: Nutritional Information (Table)</h4>
+        <ol>
+            <li>Create a table showing nutritional information for popular dishes</li>
+            <li>Include columns: Dish Name, Calories, Protein, Carbs, Fat</li>
+            <li>Use proper table structure with thead, tbody, and tfoot</li>
+            <li>Add a caption and appropriate scope attributes</li>
+            <li>Use colspan for category headers</li>
+        </ol>
+
+        <h4>Part 3: Styling (Optional CSS)</h4>
+        <ol>
+            <li>Add borders to your table</li>
+            <li>Style your lists with custom bullet points</li>
+            <li>Make the table responsive</li>
+        </ol>
+    </div>
+
+    <h2>🎨 Basic Table Styling</h2>
+    <div class="code-example">
+&lt;style&gt;
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+&lt;/style&gt;
+    </div>
+
+    <h2>📱 Responsive Tables</h2>
+    <div class="code-example">
+&lt;style&gt;
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    min-width: 500px;
+}
+
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+    }
+    
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50% !important;
+    }
+    
+    td:before {
+        content: attr(data-label) ": ";
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        font-weight: bold;
+    }
+}
+&lt;/style&gt;
+
+&lt;div class="table-container"&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td data-label="Name"&gt;John&lt;/td&gt;
+            &lt;td data-label="Email"&gt;john@email.com&lt;/td&gt;
+            &lt;td data-label="Phone"&gt;123-456-7890&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+    </div>
+
+    <h2>🤔 When to Use Lists vs Tables</h2>
+
+    <div class="highlight">
+        <strong>Use Lists When:</strong><br>
+        • Displaying a simple collection of items<br>
+        • Order matters (numbered steps)<br>
+        • Creating navigation menus<br>
+        • Showing categories and subcategories<br><br>
+
+        <strong>Use Tables When:</strong><br>
+        • Displaying tabular data (rows and columns)<br>
+        • Comparing data across multiple attributes<br>
+        • Showing relationships between data points<br>
+        • Creating data grids or spreadsheet-like displays
+    </div>
+
+    <h2>🐛 Common Mistakes</h2>
+    <ul>
+        <li><strong>Using tables for layout:</strong> Use CSS Grid or Flexbox instead</li>
+        <li><strong>Missing table headers:</strong> Always use &lt;th&gt; elements</li>
+        <li><strong>Forgetting table structure:</strong> Use thead, tbody, tfoot for semantic structure</li>
+        <li><strong>Not considering mobile:</strong> Make tables responsive</li>
+        <li><strong>Poor accessibility:</strong> Add captions and scope attributes</li>
+    </ul>
+
+    <h2>✅ Lesson 5 Checklist</h2>
+    <p>Before moving to the next lesson, make sure you can:</p>
+    <ul>
+        <li>☐ Create unordered, ordered, and description lists</li>
+        <li>☐ Nest lists within other lists</li>
+        <li>☐ Build tables with proper semantic structure</li>
+        <li>☐ Use colspan and rowspan for complex table layouts</li>
+        <li>☐ Add captions and accessibility attributes to tables</li>
+        <li>☐ Style lists and tables with CSS</li>
+        <li>☐ Know when to use lists vs tables</li>
+    </ul>
+
+    <div class="navigation">
+        <a href="lesson-04-images.html">← Previous: Images</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-06-forms.html">Next: Forms →</a>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+        <p>HTML Tutorial for Beginners | Lesson 5 of 10</p>
+    </footer>
+</body>
+</html>

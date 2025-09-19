@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: Text Elements and Formatting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .example-output {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .exercise {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+        }
+        .navigation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="lesson-01-basics.html">← Previous: HTML Basics</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-03-links.html">Next: Links →</a>
+    </div>
+
+    <h1>Lesson 2: Text Elements and Formatting</h1>
+
+    <h2>🎯 What You'll Learn</h2>
+    <ul>
+        <li>How to format text with HTML elements</li>
+        <li>The difference between bold, strong, italic, and emphasis</li>
+        <li>How to add line breaks and horizontal rules</li>
+        <li>Working with special characters</li>
+        <li>Organizing content with div and span elements</li>
+    </ul>
+
+    <h2>📝 Basic Text Formatting Elements</h2>
+
+    <h3>Bold and Strong Text</h3>
+    <p>There are two ways to make text bold in HTML:</p>
+
+    <div class="code-example">
+&lt;b&gt;This text is bold&lt;/b&gt;
+&lt;strong&gt;This text is strong (also appears bold)&lt;/strong&gt;
+    </div>
+
+    <div class="example-output">
+        <b>This text is bold</b><br>
+        <strong>This text is strong (also appears bold)</strong>
+    </div>
+
+    <div class="highlight">
+        <strong>What's the difference?</strong><br>
+        • <code>&lt;b&gt;</code> is just for visual styling (makes text look bold)<br>
+        • <code>&lt;strong&gt;</code> indicates important content (screen readers will emphasize it)
+    </div>
+
+    <h3>Italic and Emphasis</h3>
+    <p>Similarly, there are two ways to make text italic:</p>
+
+    <div class="code-example">
+&lt;i&gt;This text is italic&lt;/i&gt;
+&lt;em&gt;This text is emphasized (also appears italic)&lt;/em&gt;
+    </div>
+
+    <div class="example-output">
+        <i>This text is italic</i><br>
+        <em>This text is emphasized (also appears italic)</em>
+    </div>
+
+    <h3>Other Text Formatting</h3>
+
+    <div class="code-example">
+&lt;u&gt;Underlined text&lt;/u&gt;
+&lt;s&gt;Strikethrough text&lt;/s&gt;
+&lt;mark&gt;Highlighted text&lt;/mark&gt;
+&lt;small&gt;Small text&lt;/small&gt;
+&lt;sub&gt;Subscript&lt;/sub&gt; and &lt;sup&gt;Superscript&lt;/sup&gt;
+    </div>
+
+    <div class="example-output">
+        <u>Underlined text</u><br>
+        <s>Strikethrough text</s><br>
+        <mark>Highlighted text</mark><br>
+        <small>Small text</small><br>
+        H<sub>2</sub>O and E=mc<sup>2</sup>
+    </div>
+
+    <h2>🔤 Special Text Elements</h2>
+
+    <h3>Code and Preformatted Text</h3>
+    <div class="code-example">
+&lt;code&gt;console.log("Hello World");&lt;/code&gt;
+
+&lt;pre&gt;
+This text preserves
+    all    spacing
+        and line breaks
+&lt;/pre&gt;
+    </div>
+
+    <div class="example-output">
+        <code>console.log("Hello World");</code>
+        <pre>This text preserves
+    all    spacing
+        and line breaks</pre>
+    </div>
+
+    <h3>Quotations</h3>
+    <div class="code-example">
+&lt;blockquote&gt;
+    This is a long quote that will be indented and styled differently from regular paragraphs.
+&lt;/blockquote&gt;
+
+&lt;p&gt;As Einstein said, &lt;q&gt;Imagination is more important than knowledge.&lt;/q&gt;&lt;/p&gt;
+    </div>
+
+    <div class="example-output">
+        <blockquote>
+            This is a long quote that will be indented and styled differently from regular paragraphs.
+        </blockquote>
+        <p>As Einstein said, <q>Imagination is more important than knowledge.</q></p>
+    </div>
+
+    <h2>📏 Line Breaks and Horizontal Rules</h2>
+
+    <h3>Line Breaks</h3>
+    <div class="code-example">
+&lt;p&gt;First line&lt;br&gt;
+Second line&lt;br&gt;
+Third line&lt;/p&gt;
+    </div>
+
+    <div class="example-output">
+        <p>First line<br>
+        Second line<br>
+        Third line</p>
+    </div>
+
+    <h3>Horizontal Rules</h3>
+    <div class="code-example">
+&lt;p&gt;Content above the line&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Content below the line&lt;/p&gt;
+    </div>
+
+    <div class="example-output">
+        <p>Content above the line</p>
+        <hr>
+        <p>Content below the line</p>
+    </div>
+
+    <h2>🔧 Container Elements</h2>
+
+    <h3>Div Elements (Block-level)</h3>
+    <p>The <code>&lt;div&gt;</code> element is used to group other elements together:</p>
+
+    <div class="code-example">
+&lt;div&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;This paragraph is inside a div.&lt;/p&gt;
+    &lt;p&gt;So is this one.&lt;/p&gt;
+&lt;/div&gt;
+    </div>
+
+    <h3>Span Elements (Inline)</h3>
+    <p>The <code>&lt;span&gt;</code> element is used to group inline content:</p>
+
+    <div class="code-example">
+&lt;p&gt;This is a paragraph with &lt;span&gt;some text in a span&lt;/span&gt; element.&lt;/p&gt;
+    </div>
+
+    <div class="example-output">
+        <p>This is a paragraph with <span>some text in a span</span> element.</p>
+    </div>
+
+    <h2>🔤 Special Characters</h2>
+    <p>Some characters have special meanings in HTML, so we need to use "entities" to display them:</p>
+
+    <div class="code-example">
+&lt;p&gt;The &lt;strong&gt; tag makes text bold.&lt;/p&gt;
+&lt;p&gt;Use &amp;lt; for &lt; and &amp;gt; for &gt;&lt;/p&gt;
+&lt;p&gt;Copyright &amp;copy; 2024&lt;/p&gt;
+&lt;p&gt;Trademark &amp;trade;&lt;/p&gt;
+&lt;p&gt;Non-breaking&amp;nbsp;space&lt;/p&gt;
+    </div>
+
+    <div class="example-output">
+        <p>The &lt;strong&gt; tag makes text bold.</p>
+        <p>Use &lt; for &lt; and &gt; for &gt;</p>
+        <p>Copyright &copy; 2024</p>
+        <p>Trademark &trade;</p>
+        <p>Non-breaking&nbsp;space</p>
+    </div>
+
+    <div class="exercise">
+        <h3>🏋️ Exercise 2: Text Formatting Practice</h3>
+        <p>Create a new HTML file called "text-practice.html" and include:</p>
+        <ol>
+            <li>A main heading with your favorite book title</li>
+            <li>A paragraph with the author's name in <strong>strong</strong> text</li>
+            <li>A quote from the book using <code>&lt;blockquote&gt;</code></li>
+            <li>A paragraph explaining why you like it, with some words in <em>emphasis</em></li>
+            <li>Use a horizontal rule to separate sections</li>
+            <li>Add a small copyright notice at the bottom</li>
+        </ol>
+
+        <p><strong>Bonus:</strong> Include at least one special character (like &copy; or &trade;)</p>
+    </div>
+
+    <h2>📱 Semantic vs Presentational Elements</h2>
+
+    <div class="highlight">
+        <strong>Best Practice:</strong> Choose elements based on meaning, not appearance!<br>
+        • Use <code>&lt;strong&gt;</code> for important content, not just to make text bold<br>
+        • Use <code>&lt;em&gt;</code> for emphasized content, not just to make text italic<br>
+        • This makes your content more accessible and SEO-friendly
+    </div>
+
+    <h2>🎨 Combining Elements</h2>
+    <p>You can combine multiple formatting elements:</p>
+
+    <div class="code-example">
+&lt;p&gt;This is &lt;strong&gt;&lt;em&gt;very important and emphasized&lt;/em&gt;&lt;/strong&gt; text.&lt;/p&gt;
+&lt;p&gt;Chemical formula: H&lt;sub&gt;2&lt;/sub&gt;SO&lt;sub&gt;4&lt;/sub&gt;&lt;/p&gt;
+&lt;p&gt;Math equation: (a+b)&lt;sup&gt;2&lt;/sup&gt; = a&lt;sup&gt;2&lt;/sup&gt; + 2ab + b&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+    </div>
+
+    <div class="example-output">
+        <p>This is <strong><em>very important and emphasized</em></strong> text.</p>
+        <p>Chemical formula: H<sub>2</sub>SO<sub>4</sub></p>
+        <p>Math equation: (a+b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></p>
+    </div>
+
+    <h2>🐛 Common Mistakes</h2>
+    <ul>
+        <li><strong>Overlapping tags:</strong> <code>&lt;strong&gt;&lt;em&gt;text&lt;/strong&gt;&lt;/em&gt;</code> ❌ (Wrong!)</li>
+        <li><strong>Correct nesting:</strong> <code>&lt;strong&gt;&lt;em&gt;text&lt;/em&gt;&lt;/strong&gt;</code> ✅</li>
+        <li><strong>Using &lt;br&gt; for spacing:</strong> Use CSS margins instead</li>
+        <li><strong>Overusing &lt;b&gt; and &lt;i&gt;:</strong> Prefer &lt;strong&gt; and &lt;em&gt;</li>
+    </ul>
+
+    <h2>✅ Lesson 2 Checklist</h2>
+    <p>Before moving to the next lesson, make sure you can:</p>
+    <ul>
+        <li>☐ Use strong, em, mark, and other formatting elements</li>
+        <li>☐ Add line breaks and horizontal rules</li>
+        <li>☐ Display special characters using HTML entities</li>
+        <li>☐ Understand the difference between semantic and presentational elements</li>
+        <li>☐ Properly nest HTML elements</li>
+    </ul>
+
+    <div class="navigation">
+        <a href="lesson-01-basics.html">← Previous: HTML Basics</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-03-links.html">Next: Links →</a>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+        <p>HTML Tutorial for Beginners | Lesson 2 of 10</p>
+    </footer>
+</body>
+</html>

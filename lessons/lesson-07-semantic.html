@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: Semantic HTML Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .example-output {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .exercise {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+        }
+        .navigation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .demo-layout {
+            border: 2px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .demo-header { background-color: #e3f2fd; padding: 10px; margin: 5px 0; }
+        .demo-nav { background-color: #f3e5f5; padding: 10px; margin: 5px 0; }
+        .demo-main { background-color: #e8f5e8; padding: 10px; margin: 5px 0; }
+        .demo-aside { background-color: #fff3e0; padding: 10px; margin: 5px 0; }
+        .demo-footer { background-color: #fce4ec; padding: 10px; margin: 5px 0; }
+        .demo-article { background-color: #f1f8e9; padding: 10px; margin: 5px 0; }
+        .demo-section { background-color: #e0f2f1; padding: 10px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="lesson-06-forms.html">← Previous: Forms</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-08-css.html">Next: CSS Styling →</a>
+    </div>
+
+    <h1>Lesson 7: Semantic HTML Elements</h1>
+
+    <h2>🎯 What You'll Learn</h2>
+    <ul>
+        <li>What semantic HTML means and why it matters</li>
+        <li>HTML5 semantic elements for page structure</li>
+        <li>Content sectioning elements</li>
+        <li>Accessibility benefits of semantic HTML</li>
+        <li>SEO advantages of proper markup</li>
+        <li>When to use semantic vs generic elements</li>
+    </ul>
+
+    <h2>🧠 What is Semantic HTML?</h2>
+    <p><strong>Semantic HTML</strong> uses elements that clearly describe their meaning and purpose, both to developers and browsers. Instead of just using generic <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements, semantic HTML uses specific elements that convey meaning.</p>
+
+    <div class="highlight">
+        <strong>Benefits of Semantic HTML:</strong><br>
+        • Better accessibility for screen readers<br>
+        • Improved SEO (search engines understand your content better)<br>
+        • Cleaner, more maintainable code<br>
+        • Better browser compatibility<br>
+        • Easier styling with CSS
+    </div>
+
+    <h2>🏗️ Page Structure Elements</h2>
+
+    <h3>Basic Page Layout</h3>
+    <div class="code-example">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Website&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Article Title&lt;/h2&gt;
+            &lt;p&gt;Article content goes here...&lt;/p&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;aside&gt;
+        &lt;h3&gt;Related Links&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2024 My Website. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-layout">
+            <div class="demo-header">
+                <strong>&lt;header&gt;</strong> - Site header with logo and navigation
+            </div>
+            <div class="demo-main">
+                <strong>&lt;main&gt;</strong> - Primary content area
+                <div class="demo-article">
+                    <strong>&lt;article&gt;</strong> - Self-contained content
+                </div>
+            </div>
+            <div class="demo-aside">
+                <strong>&lt;aside&gt;</strong> - Sidebar content
+            </div>
+            <div class="demo-footer">
+                <strong>&lt;footer&gt;</strong> - Site footer
+            </div>
+        </div>
+    </div>
+
+    <h2>📋 Semantic Elements Reference</h2>
+
+    <h3>&lt;header&gt;</h3>
+    <p>Contains introductory content, typically site branding, navigation, or article headers.</p>
+    <div class="code-example">
+&lt;header&gt;
+    &lt;img src="logo.png" alt="Company Logo"&gt;
+    &lt;h1&gt;Welcome to Our Website&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;!-- Navigation menu --&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;!-- Headers can also be used in articles --&gt;
+&lt;article&gt;
+    &lt;header&gt;
+        &lt;h2&gt;Article Title&lt;/h2&gt;
+        &lt;p&gt;By John Doe | Published March 15, 2024&lt;/p&gt;
+    &lt;/header&gt;
+    &lt;p&gt;Article content...&lt;/p&gt;
+&lt;/article&gt;
+    </div>
+
+    <h3>&lt;nav&gt;</h3>
+    <p>Contains navigation links to other pages or sections.</p>
+    <div class="code-example">
+&lt;nav aria-label="Main Navigation"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="/" aria-current="page"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/products"&gt;Products&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/about"&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Breadcrumb navigation --&gt;
+&lt;nav aria-label="Breadcrumb"&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="/products"&gt;Products&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;Laptops&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;
+    </div>
+
+    <h3>&lt;main&gt;</h3>
+    <p>Contains the primary content of the page. There should only be one <code>&lt;main&gt;</code> element per page.</p>
+    <div class="code-example">
+&lt;main&gt;
+    &lt;h1&gt;Welcome to Our Blog&lt;/h1&gt;
+    &lt;p&gt;Here you'll find our latest articles and insights.&lt;/p&gt;
+    
+    &lt;article&gt;
+        &lt;!-- Blog post content --&gt;
+    &lt;/article&gt;
+    
+    &lt;article&gt;
+        &lt;!-- Another blog post --&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+    </div>
+
+    <h3>&lt;article&gt;</h3>
+    <p>Contains self-contained content that could be distributed independently.</p>
+    <div class="code-example">
+&lt;article&gt;
+    &lt;header&gt;
+        &lt;h2&gt;Getting Started with HTML&lt;/h2&gt;
+        &lt;p&gt;&lt;time datetime="2024-03-15"&gt;March 15, 2024&lt;/time&gt; by Jane Smith&lt;/p&gt;
+    &lt;/header&gt;
+    
+    &lt;p&gt;HTML is the foundation of web development...&lt;/p&gt;
+    
+    &lt;section&gt;
+        &lt;h3&gt;What You'll Learn&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Basic HTML structure&lt;/li&gt;
+            &lt;li&gt;Common elements&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Tags: &lt;a href="/tag/html"&gt;HTML&lt;/a&gt;, &lt;a href="/tag/beginner"&gt;Beginner&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;
+    </div>
+
+    <h3>&lt;section&gt;</h3>
+    <p>Groups related content together, typically with a heading.</p>
+    <div class="code-example">
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Our Services&lt;/h2&gt;
+        &lt;p&gt;We offer a wide range of web development services.&lt;/p&gt;
+        
+        &lt;section&gt;
+            &lt;h3&gt;Frontend Development&lt;/h3&gt;
+            &lt;p&gt;HTML, CSS, and JavaScript development.&lt;/p&gt;
+        &lt;/section&gt;
+        
+        &lt;section&gt;
+            &lt;h3&gt;Backend Development&lt;/h3&gt;
+            &lt;p&gt;Server-side programming and databases.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+    </div>
+
+    <h3>&lt;aside&gt;</h3>
+    <p>Contains content related to the main content but not essential to understanding it.</p>
+    <div class="code-example">
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Climate Change Effects&lt;/h2&gt;
+        &lt;p&gt;Climate change is affecting our planet in various ways...&lt;/p&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+        &lt;h3&gt;Did You Know?&lt;/h3&gt;
+        &lt;p&gt;The Earth's temperature has risen by 1.1°C since 1880.&lt;/p&gt;
+        
+        &lt;h3&gt;Related Articles&lt;/h3&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="/renewable-energy"&gt;Renewable Energy Solutions&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/carbon-footprint"&gt;Reducing Your Carbon Footprint&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/aside&gt;
+&lt;/main&gt;
+    </div>
+
+    <h3>&lt;footer&gt;</h3>
+    <p>Contains footer information for the page or section.</p>
+    <div class="code-example">
+&lt;!-- Page footer --&gt;
+&lt;footer&gt;
+    &lt;div&gt;
+        &lt;h3&gt;Contact Us&lt;/h3&gt;
+        &lt;p&gt;Email: contact@example.com&lt;/p&gt;
+        &lt;p&gt;Phone: (555) 123-4567&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;h3&gt;Follow Us&lt;/h3&gt;
+        &lt;a href="/facebook"&gt;Facebook&lt;/a&gt; |
+        &lt;a href="/twitter"&gt;Twitter&lt;/a&gt; |
+        &lt;a href="/linkedin"&gt;LinkedIn&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;p&gt;&amp;copy; 2024 Example Company. All rights reserved.&lt;/p&gt;
+&lt;/footer&gt;
+
+&lt;!-- Article footer --&gt;
+&lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Article content...&lt;/p&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Published by John Doe on &lt;time datetime="2024-03-15"&gt;March 15, 2024&lt;/time&gt;&lt;/p&gt;
+        &lt;p&gt;Category: &lt;a href="/web-development"&gt;Web Development&lt;/a&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;
+    </div>
+
+    <h2>🎭 Content Elements</h2>
+
+    <h3>&lt;figure&gt; and &lt;figcaption&gt;</h3>
+    <div class="code-example">
+&lt;figure&gt;
+    &lt;img src="chart.png" alt="Sales growth chart"&gt;
+    &lt;figcaption&gt;
+        Figure 1: Company sales have increased by 25% this quarter
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;blockquote&gt;
+        &lt;p&gt;The best way to predict the future is to create it.&lt;/p&gt;
+    &lt;/blockquote&gt;
+    &lt;figcaption&gt;
+        &mdash; Peter Drucker, &lt;cite&gt;Management Consultant&lt;/cite&gt;
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+    </div>
+
+    <h3>&lt;details&gt; and &lt;summary&gt;</h3>
+    <div class="code-example">
+&lt;details&gt;
+    &lt;summary&gt;What is HTML?&lt;/summary&gt;
+    &lt;p&gt;HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page using elements and tags.&lt;/p&gt;
+&lt;/details&gt;
+
+&lt;details open&gt;
+    &lt;summary&gt;Frequently Asked Questions&lt;/summary&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;How long does shipping take?&lt;/dt&gt;
+        &lt;dd&gt;Standard shipping takes 3-5 business days.&lt;/dd&gt;
+        
+        &lt;dt&gt;Do you offer returns?&lt;/dt&gt;
+        &lt;dd&gt;Yes, we offer 30-day returns on all items.&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/details&gt;
+    </div>
+
+    <div class="example-output">
+        <details>
+            <summary>What is HTML?</summary>
+            <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page using elements and tags.</p>
+        </details>
+    </div>
+
+    <h3>&lt;time&gt;</h3>
+    <div class="code-example">
+&lt;p&gt;The event starts on &lt;time datetime="2024-06-15T19:00"&gt;June 15th at 7:00 PM&lt;/time&gt;.&lt;/p&gt;
+
+&lt;p&gt;This article was published &lt;time datetime="2024-03-15" pubdate&gt;March 15, 2024&lt;/time&gt;.&lt;/p&gt;
+
+&lt;p&gt;The meeting lasted &lt;time datetime="PT2H30M"&gt;2 hours and 30 minutes&lt;/time&gt;.&lt;/p&gt;
+    </div>
+
+    <h3>&lt;mark&gt;</h3>
+    <div class="code-example">
+&lt;p&gt;Please review the &lt;mark&gt;highlighted&lt;/mark&gt; sections of the document.&lt;/p&gt;
+
+&lt;p&gt;Search results for "HTML tutorial":&lt;/p&gt;
+&lt;p&gt;Learn &lt;mark&gt;HTML&lt;/mark&gt; basics with our comprehensive &lt;mark&gt;tutorial&lt;/mark&gt;.&lt;/p&gt;
+    </div>
+
+    <div class="example-output">
+        <p>Please review the <mark>highlighted</mark> sections of the document.</p>
+    </div>
+
+    <h2>♿ Accessibility Benefits</h2>
+
+    <div class="highlight">
+        <strong>How Semantic HTML Helps Accessibility:</strong><br>
+        • Screen readers can navigate by headings, landmarks, and regions<br>
+        • <code>&lt;nav&gt;</code> elements create navigation landmarks<br>
+        • <code>&lt;main&gt;</code> helps users skip to primary content<br>
+        • <code>&lt;article&gt;</code> and <code>&lt;section&gt;</code> create logical content structure<br>
+        • Semantic elements provide context to assistive technologies
+    </div>
+
+    <h3>ARIA Landmarks vs Semantic Elements</h3>
+    <div class="code-example">
+&lt;!-- Instead of this: --&gt;
+&lt;div role="navigation"&gt;
+    &lt;ul&gt;...&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;!-- Use this: --&gt;
+&lt;nav&gt;
+    &lt;ul&gt;...&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Instead of this: --&gt;
+&lt;div role="main"&gt;
+    &lt;h1&gt;Content&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;!-- Use this: --&gt;
+&lt;main&gt;
+    &lt;h1&gt;Content&lt;/h1&gt;
+&lt;/main&gt;
+    </div>
+
+    <div class="exercise">
+        <h3>🏋️ Exercise 7: Semantic Blog Layout</h3>
+        <p>Create a semantic blog layout with the following structure:</p>
+        
+        <h4>Requirements:</h4>
+        <ol>
+            <li><strong>Create blog.html with proper semantic structure:</strong>
+                <ul>
+                    <li>Site header with logo and navigation</li>
+                    <li>Main content area with 2-3 blog articles</li>
+                    <li>Sidebar with related links and author info</li>
+                    <li>Site footer with contact info and social links</li>
+                </ul>
+            </li>
+            
+            <li><strong>Each article should include:</strong>
+                <ul>
+                    <li>Article header with title, author, and publish date</li>
+                    <li>Article content with sections</li>
+                    <li>Article footer with tags and categories</li>
+                    <li>Use the &lt;time&gt; element for dates</li>
+                </ul>
+            </li>
+            
+            <li><strong>Add interactive elements:</strong>
+                <ul>
+                    <li>Use &lt;details&gt; for a FAQ section</li>
+                    <li>Use &lt;figure&gt; and &lt;figcaption&gt; for images</li>
+                    <li>Use &lt;mark&gt; to highlight important text</li>
+                </ul>
+            </li>
+            
+            <li><strong>Ensure accessibility:</strong>
+                <ul>
+                    <li>Proper heading hierarchy (h1, h2, h3, etc.)</li>
+                    <li>Descriptive navigation labels</li>
+                    <li>Only one &lt;main&gt; element per page</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <h2>🆚 Semantic vs Generic Elements</h2>
+
+    <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+        <thead>
+            <tr style="background-color: #f8f9fa;">
+                <th>Instead of</th>
+                <th>Use</th>
+                <th>When</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;div class="header"&gt;</code></td>
+                <td><code>&lt;header&gt;</code></td>
+                <td>Page or section header</td>
+            </tr>
+            <tr>
+                <td><code>&lt;div class="nav"&gt;</code></td>
+                <td><code>&lt;nav&gt;</code></td>
+                <td>Navigation links</td>
+            </tr>
+            <tr>
+                <td><code>&lt;div class="main"&gt;</code></td>
+                <td><code>&lt;main&gt;</code></td>
+                <td>Primary page content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;div class="article"&gt;</code></td>
+                <td><code>&lt;article&gt;</code></td>
+                <td>Self-contained content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;div class="sidebar"&gt;</code></td>
+                <td><code>&lt;aside&gt;</code></td>
+                <td>Sidebar or related content</td>
+            </tr>
+            <tr>
+                <td><code>&lt;div class="footer"&gt;</code></td>
+                <td><code>&lt;footer&gt;</code></td>
+                <td>Page or section footer</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>🔍 SEO Benefits</h2>
+    <p>Search engines use semantic HTML to better understand your content:</p>
+    <ul>
+        <li><strong>&lt;h1&gt;-&lt;h6&gt;:</strong> Create content hierarchy</li>
+        <li><strong>&lt;article&gt;:</strong> Identifies main content pieces</li>
+        <li><strong>&lt;nav&gt;:</strong> Helps understand site structure</li>
+        <li><strong>&lt;time&gt;:</strong> Provides temporal context</li>
+        <li><strong>&lt;address&gt;:</strong> Identifies contact information</li>
+    </ul>
+
+    <h2>🐛 Common Mistakes</h2>
+    <ul>
+        <li><strong>Multiple &lt;main&gt; elements:</strong> Use only one per page</li>
+        <li><strong>Using &lt;section&gt; without headings:</strong> Sections should have headings</li>
+        <li><strong>Overusing &lt;article&gt;:</strong> Only for self-contained content</li>
+        <li><strong>Nesting &lt;header&gt; in &lt;header&gt;:</strong> Don't nest landmark elements</li>
+        <li><strong>Using semantic elements just for styling:</strong> Use them for meaning, not appearance</li>
+    </ul>
+
+    <h2>✅ Lesson 7 Checklist</h2>
+    <p>Before moving to the next lesson, make sure you can:</p>
+    <ul>
+        <li>☐ Understand the purpose and benefits of semantic HTML</li>
+        <li>☐ Use header, nav, main, article, section, aside, and footer appropriately</li>
+        <li>☐ Create proper document structure with semantic elements</li>
+        <li>☐ Use figure, time, mark, and details elements correctly</li>
+        <li>☐ Understand accessibility benefits of semantic markup</li>
+        <li>☐ Know when to use semantic vs generic elements</li>
+        <li>☐ Create SEO-friendly content structure</li>
+    </ul>
+
+    <div class="navigation">
+        <a href="lesson-06-forms.html">← Previous: Forms</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-08-css.html">Next: CSS Styling →</a>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+        <p>HTML Tutorial for Beginners | Lesson 7 of 10</p>
+    </footer>
+</body>
+</html>

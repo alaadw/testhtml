@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 6: Forms and Input Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .example-output {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .exercise {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+        }
+        .navigation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .demo-form {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .demo-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .demo-form input, .demo-form textarea, .demo-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        .demo-form input[type="checkbox"], .demo-form input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .demo-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="lesson-05-lists-tables.html">← Previous: Lists & Tables</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-07-semantic.html">Next: Semantic HTML →</a>
+    </div>
+
+    <h1>Lesson 6: Forms and Input Elements</h1>
+
+    <h2>🎯 What You'll Learn</h2>
+    <ul>
+        <li>How to create HTML forms</li>
+        <li>Different types of input elements</li>
+        <li>Form validation and accessibility</li>
+        <li>Organizing forms with fieldsets and labels</li>
+        <li>Styling forms with CSS</li>
+        <li>Form submission and handling</li>
+    </ul>
+
+    <h2>📝 Basic Form Structure</h2>
+    <div class="code-example">
+&lt;form action="submit.php" method="post"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-form">
+            <label for="demo-username">Username:</label>
+            <input type="text" id="demo-username" name="username" required>
+            
+            <label for="demo-email">Email:</label>
+            <input type="email" id="demo-email" name="email" required>
+            
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+
+    <div class="highlight">
+        <strong>Form Attributes:</strong><br>
+        • <code>action</code> = Where to send form data<br>
+        • <code>method</code> = How to send data (GET or POST)<br>
+        • <code>name</code> = Identifies the form data<br>
+        • <code>id</code> = Links labels to inputs
+    </div>
+
+    <h2>🎛️ Input Types</h2>
+
+    <h3>Text Inputs</h3>
+    <div class="code-example">
+&lt;!-- Regular text --&gt;
+&lt;input type="text" name="firstname" placeholder="Enter your first name"&gt;
+
+&lt;!-- Password (hidden) --&gt;
+&lt;input type="password" name="password" placeholder="Enter password"&gt;
+
+&lt;!-- Email (with validation) --&gt;
+&lt;input type="email" name="email" placeholder="your@email.com"&gt;
+
+&lt;!-- URL --&gt;
+&lt;input type="url" name="website" placeholder="https://example.com"&gt;
+
+&lt;!-- Phone number --&gt;
+&lt;input type="tel" name="phone" placeholder="(123) 456-7890"&gt;
+
+&lt;!-- Search --&gt;
+&lt;input type="search" name="query" placeholder="Search..."&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-form">
+            <label>Regular text:</label>
+            <input type="text" placeholder="Enter your first name">
+            
+            <label>Password:</label>
+            <input type="password" placeholder="Enter password">
+            
+            <label>Email:</label>
+            <input type="email" placeholder="your@email.com">
+            
+            <label>URL:</label>
+            <input type="url" placeholder="https://example.com">
+            
+            <label>Phone:</label>
+            <input type="tel" placeholder="(123) 456-7890">
+            
+            <label>Search:</label>
+            <input type="search" placeholder="Search...">
+        </div>
+    </div>
+
+    <h3>Number and Date Inputs</h3>
+    <div class="code-example">
+&lt;!-- Number --&gt;
+&lt;input type="number" name="age" min="1" max="120" value="25"&gt;
+
+&lt;!-- Range (slider) --&gt;
+&lt;input type="range" name="volume" min="0" max="100" value="50"&gt;
+
+&lt;!-- Date --&gt;
+&lt;input type="date" name="birthday"&gt;
+
+&lt;!-- Time --&gt;
+&lt;input type="time" name="appointment"&gt;
+
+&lt;!-- Date and time --&gt;
+&lt;input type="datetime-local" name="event"&gt;
+
+&lt;!-- Month --&gt;
+&lt;input type="month" name="start-month"&gt;
+
+&lt;!-- Week --&gt;
+&lt;input type="week" name="vacation-week"&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-form">
+            <label>Age (number):</label>
+            <input type="number" min="1" max="120" value="25">
+            
+            <label>Volume (range):</label>
+            <input type="range" min="0" max="100" value="50">
+            
+            <label>Birthday (date):</label>
+            <input type="date">
+            
+            <label>Appointment (time):</label>
+            <input type="time">
+            
+            <label>Event (datetime):</label>
+            <input type="datetime-local">
+        </div>
+    </div>
+
+    <h3>Choice Inputs</h3>
+    <div class="code-example">
+&lt;!-- Radio buttons (single choice) --&gt;
+&lt;input type="radio" id="small" name="size" value="small"&gt;
+&lt;label for="small"&gt;Small&lt;/label&gt;
+
+&lt;input type="radio" id="medium" name="size" value="medium" checked&gt;
+&lt;label for="medium"&gt;Medium&lt;/label&gt;
+
+&lt;input type="radio" id="large" name="size" value="large"&gt;
+&lt;label for="large"&gt;Large&lt;/label&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;!-- Checkboxes (multiple choices) --&gt;
+&lt;input type="checkbox" id="newsletter" name="preferences" value="newsletter"&gt;
+&lt;label for="newsletter"&gt;Subscribe to newsletter&lt;/label&gt;
+
+&lt;input type="checkbox" id="updates" name="preferences" value="updates" checked&gt;
+&lt;label for="updates"&gt;Receive product updates&lt;/label&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-form">
+            <fieldset>
+                <legend>Size (radio buttons):</legend>
+                <input type="radio" id="demo-small" name="demo-size" value="small">
+                <label for="demo-small">Small</label><br>
+                
+                <input type="radio" id="demo-medium" name="demo-size" value="medium" checked>
+                <label for="demo-medium">Medium</label><br>
+                
+                <input type="radio" id="demo-large" name="demo-size" value="large">
+                <label for="demo-large">Large</label>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Preferences (checkboxes):</legend>
+                <input type="checkbox" id="demo-newsletter" name="demo-preferences" value="newsletter">
+                <label for="demo-newsletter">Subscribe to newsletter</label><br>
+                
+                <input type="checkbox" id="demo-updates" name="demo-preferences" value="updates" checked>
+                <label for="demo-updates">Receive product updates</label>
+            </fieldset>
+        </div>
+    </div>
+
+    <h2>📝 Other Form Elements</h2>
+
+    <h3>Textarea</h3>
+    <div class="code-example">
+&lt;label for="message"&gt;Message:&lt;/label&gt;
+&lt;textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your message here..."&gt;&lt;/textarea&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-form">
+            <label for="demo-message">Message:</label>
+            <textarea id="demo-message" name="message" rows="4" placeholder="Enter your message here..."></textarea>
+        </div>
+    </div>
+
+    <h3>Select Dropdown</h3>
+    <div class="code-example">
+&lt;label for="country"&gt;Country:&lt;/label&gt;
+&lt;select id="country" name="country"&gt;
+    &lt;option value=""&gt;Select a country&lt;/option&gt;
+    &lt;option value="us"&gt;United States&lt;/option&gt;
+    &lt;option value="ca"&gt;Canada&lt;/option&gt;
+    &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+    &lt;option value="au"&gt;Australia&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Multiple selection --&gt;
+&lt;label for="languages"&gt;Languages (hold Ctrl to select multiple):&lt;/label&gt;
+&lt;select id="languages" name="languages" multiple&gt;
+    &lt;option value="html"&gt;HTML&lt;/option&gt;
+    &lt;option value="css"&gt;CSS&lt;/option&gt;
+    &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+    &lt;option value="python"&gt;Python&lt;/option&gt;
+&lt;/select&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-form">
+            <label for="demo-country">Country:</label>
+            <select id="demo-country" name="country">
+                <option value="">Select a country</option>
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="uk">United Kingdom</option>
+                <option value="au">Australia</option>
+            </select>
+            
+            <label for="demo-languages">Languages (hold Ctrl to select multiple):</label>
+            <select id="demo-languages" name="languages" multiple>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JavaScript</option>
+                <option value="python">Python</option>
+            </select>
+        </div>
+    </div>
+
+    <h2>🎯 Form Validation</h2>
+
+    <h3>HTML5 Validation Attributes</h3>
+    <div class="code-example">
+&lt;!-- Required field --&gt;
+&lt;input type="text" name="username" required&gt;
+
+&lt;!-- Minimum/maximum length --&gt;
+&lt;input type="text" name="username" minlength="3" maxlength="20" required&gt;
+
+&lt;!-- Number ranges --&gt;
+&lt;input type="number" name="age" min="18" max="65" required&gt;
+
+&lt;!-- Pattern matching (regex) --&gt;
+&lt;input type="text" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+       placeholder="123-456-7890" title="Format: 123-456-7890"&gt;
+
+&lt;!-- File upload --&gt;
+&lt;input type="file" name="resume" accept=".pdf,.doc,.docx"&gt;
+    </div>
+
+    <h3>Custom Validation Messages</h3>
+    <div class="code-example">
+&lt;input type="email" 
+       name="email" 
+       required 
+       title="Please enter a valid email address"
+       oninvalid="this.setCustomValidity('Please enter a valid email')"
+       oninput="this.setCustomValidity('')"&gt;
+    </div>
+
+    <h2>🏗️ Form Organization</h2>
+
+    <h3>Fieldsets and Legends</h3>
+    <div class="code-example">
+&lt;form&gt;
+    &lt;fieldset&gt;
+        &lt;legend&gt;Personal Information&lt;/legend&gt;
+        &lt;label for="fname"&gt;First Name:&lt;/label&gt;
+        &lt;input type="text" id="fname" name="firstname"&gt;
+        
+        &lt;label for="lname"&gt;Last Name:&lt;/label&gt;
+        &lt;input type="text" id="lname" name="lastname"&gt;
+    &lt;/fieldset&gt;
+    
+    &lt;fieldset&gt;
+        &lt;legend&gt;Contact Information&lt;/legend&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email"&gt;
+        
+        &lt;label for="phone"&gt;Phone:&lt;/label&gt;
+        &lt;input type="tel" id="phone" name="phone"&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-form">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="demo-fname">First Name:</label>
+                <input type="text" id="demo-fname" name="firstname">
+                
+                <label for="demo-lname">Last Name:</label>
+                <input type="text" id="demo-lname" name="lastname">
+            </fieldset>
+            
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="demo-email2">Email:</label>
+                <input type="email" id="demo-email2" name="email">
+                
+                <label for="demo-phone">Phone:</label>
+                <input type="tel" id="demo-phone" name="phone">
+            </fieldset>
+        </div>
+    </div>
+
+    <h2>🎛️ Button Types</h2>
+    <div class="code-example">
+&lt;!-- Submit button (submits form) --&gt;
+&lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+&lt;input type="submit" value="Submit Form"&gt;
+
+&lt;!-- Reset button (clears form) --&gt;
+&lt;button type="reset"&gt;Reset Form&lt;/button&gt;
+&lt;input type="reset" value="Reset Form"&gt;
+
+&lt;!-- Regular button (for JavaScript) --&gt;
+&lt;button type="button" onclick="alert('Hello!')"&gt;Click Me&lt;/button&gt;
+&lt;input type="button" value="Click Me" onclick="alert('Hello!')"&gt;
+
+&lt;!-- Image button --&gt;
+&lt;input type="image" src="submit-button.png" alt="Submit" width="100"&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-form">
+            <button type="submit">Submit Form</button>
+            <button type="reset">Reset Form</button>
+            <button type="button" onclick="alert('Hello!')">Click Me</button>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>🏋️ Exercise 6: Contact Form</h3>
+        <p>Create a comprehensive contact form with the following elements:</p>
+        
+        <h4>Required Fields:</h4>
+        <ol>
+            <li><strong>Personal Info fieldset:</strong>
+                <ul>
+                    <li>First Name (text, required, 2-50 characters)</li>
+                    <li>Last Name (text, required, 2-50 characters)</li>
+                    <li>Email (email, required)</li>
+                    <li>Phone (tel, optional)</li>
+                </ul>
+            </li>
+            <li><strong>Message fieldset:</strong>
+                <ul>
+                    <li>Subject (dropdown with options: General, Support, Sales)</li>
+                    <li>Priority (radio buttons: Low, Normal, High)</li>
+                    <li>Message (textarea, required, 10-500 characters)</li>
+                </ul>
+            </li>
+            <li><strong>Preferences fieldset:</strong>
+                <ul>
+                    <li>Contact method (checkboxes: Email, Phone, Mail)</li>
+                    <li>Newsletter subscription (checkbox)</li>
+                </ul>
+            </li>
+            <li><strong>Buttons:</strong>
+                <ul>
+                    <li>Submit button</li>
+                    <li>Reset button</li>
+                </ul>
+            </li>
+        </ol>
+        
+        <h4>Requirements:</h4>
+        <ul>
+            <li>Use proper labels for all inputs</li>
+            <li>Add appropriate validation attributes</li>
+            <li>Include placeholder text where helpful</li>
+            <li>Group related fields with fieldsets</li>
+            <li>Style the form to look professional</li>
+        </ul>
+    </div>
+
+    <h2>♿ Form Accessibility</h2>
+
+    <h3>Proper Labels</h3>
+    <div class="code-example">
+&lt;!-- Explicit label (preferred) --&gt;
+&lt;label for="username"&gt;Username:&lt;/label&gt;
+&lt;input type="text" id="username" name="username"&gt;
+
+&lt;!-- Implicit label --&gt;
+&lt;label&gt;
+    Password:
+    &lt;input type="password" name="password"&gt;
+&lt;/label&gt;
+    </div>
+
+    <h3>ARIA Attributes</h3>
+    <div class="code-example">
+&lt;input type="text" 
+       name="username" 
+       aria-label="Enter your username"
+       aria-required="true"
+       aria-describedby="username-help"&gt;
+&lt;div id="username-help"&gt;Username must be 3-20 characters&lt;/div&gt;
+    </div>
+
+    <h2>🎨 Form Styling</h2>
+    <div class="code-example">
+&lt;style&gt;
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+button {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+&lt;/style&gt;
+    </div>
+
+    <h2>🐛 Common Form Mistakes</h2>
+    <ul>
+        <li><strong>Missing labels:</strong> Every input needs a label</li>
+        <li><strong>Poor validation:</strong> Validate on both client and server side</li>
+        <li><strong>No feedback:</strong> Tell users when something goes wrong</li>
+        <li><strong>Not mobile-friendly:</strong> Test forms on mobile devices</li>
+        <li><strong>Unclear required fields:</strong> Mark required fields clearly</li>
+        <li><strong>Too long:</strong> Keep forms as short as possible</li>
+    </ul>
+
+    <h2>✅ Lesson 6 Checklist</h2>
+    <p>Before moving to the next lesson, make sure you can:</p>
+    <ul>
+        <li>☐ Create forms with various input types</li>
+        <li>☐ Add proper labels and accessibility attributes</li>
+        <li>☐ Use form validation attributes</li>
+        <li>☐ Organize forms with fieldsets and legends</li>
+        <li>☐ Style forms to look professional</li>
+        <li>☐ Understand the difference between radio buttons and checkboxes</li>
+        <li>☐ Create dropdown menus and text areas</li>
+    </ul>
+
+    <div class="navigation">
+        <a href="lesson-05-lists-tables.html">← Previous: Lists & Tables</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-07-semantic.html">Next: Semantic HTML →</a>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+        <p>HTML Tutorial for Beginners | Lesson 6 of 10</p>
+    </footer>
+</body>
+</html>

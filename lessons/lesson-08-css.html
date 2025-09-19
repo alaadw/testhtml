@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8: Basic CSS Styling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .example-output {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .exercise {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+        }
+        .navigation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        /* Demo styles */
+        .demo-red { color: red; }
+        .demo-blue { color: blue; }
+        .demo-large { font-size: 24px; }
+        .demo-bold { font-weight: bold; }
+        .demo-border { border: 2px solid #007bff; padding: 10px; }
+        .demo-background { background-color: #f0f8ff; padding: 10px; }
+        .demo-center { text-align: center; }
+        .demo-shadow { box-shadow: 2px 2px 5px rgba(0,0,0,0.3); padding: 10px; }
+        .demo-rounded { border-radius: 10px; background-color: #e9ecef; padding: 10px; }
+        .demo-hover:hover { background-color: #28a745; color: white; cursor: pointer; }
+        .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .demo-grid-item { background-color: #007bff; color: white; padding: 20px; text-align: center; }
+        .demo-flex { display: flex; gap: 10px; flex-wrap: wrap; }
+        .demo-flex-item { background-color: #6c757d; color: white; padding: 15px; flex: 1; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="lesson-07-semantic.html">← Previous: Semantic HTML</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-09-layout.html">Next: Layout & Positioning →</a>
+    </div>
+
+    <h1>Lesson 8: Basic CSS Styling</h1>
+
+    <h2>🎯 What You'll Learn</h2>
+    <ul>
+        <li>What CSS is and how it works</li>
+        <li>Three ways to add CSS to HTML</li>
+        <li>CSS selectors and properties</li>
+        <li>Colors, fonts, and text styling</li>
+        <li>The CSS box model</li>
+        <li>Basic layout techniques</li>
+        <li>Responsive design basics</li>
+    </ul>
+
+    <h2>🎨 What is CSS?</h2>
+    <p><strong>CSS (Cascading Style Sheets)</strong> is used to style and layout HTML elements. While HTML provides structure, CSS provides the visual presentation.</p>
+
+    <div class="highlight">
+        <strong>CSS Controls:</strong><br>
+        • Colors and backgrounds<br>
+        • Fonts and text styling<br>
+        • Spacing and layout<br>
+        • Borders and shadows<br>
+        • Animations and transitions<br>
+        • Responsive design
+    </div>
+
+    <h2>📝 Three Ways to Add CSS</h2>
+
+    <h3>1. Inline CSS</h3>
+    <div class="code-example">
+&lt;h1 style="color: red; font-size: 24px;"&gt;Red Heading&lt;/h1&gt;
+&lt;p style="background-color: yellow; padding: 10px;"&gt;Yellow paragraph&lt;/p&gt;
+    </div>
+
+    <div class="example-output">
+        <h3 style="color: red; font-size: 24px;">Red Heading</h3>
+        <p style="background-color: yellow; padding: 10px;">Yellow paragraph</p>
+    </div>
+
+    <h3>2. Internal CSS</h3>
+    <div class="code-example">
+&lt;head&gt;
+    &lt;style&gt;
+        h1 {
+            color: blue;
+            font-size: 28px;
+        }
+        
+        p {
+            background-color: lightgray;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+    </div>
+
+    <h3>3. External CSS</h3>
+    <div class="code-example">
+&lt;!-- In HTML file --&gt;
+&lt;head&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+
+/* In styles.css file */
+h1 {
+    color: green;
+    font-size: 32px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+    </div>
+
+    <div class="highlight">
+        <strong>Best Practice:</strong> Use external CSS files for better organization, performance, and maintainability. Inline CSS should be used sparingly.
+    </div>
+
+    <h2>🎯 CSS Selectors</h2>
+
+    <h3>Basic Selectors</h3>
+    <div class="code-example">
+/* Element selector */
+h1 {
+    color: blue;
+}
+
+/* Class selector */
+.highlight {
+    background-color: yellow;
+}
+
+/* ID selector */
+#main-title {
+    font-size: 36px;
+}
+
+/* Multiple selectors */
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+    </div>
+
+    <div class="code-example">
+&lt;!-- HTML using the selectors above --&gt;
+&lt;h1 id="main-title"&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Subtitle&lt;/h2&gt;
+&lt;p class="highlight"&gt;This paragraph is highlighted&lt;/p&gt;
+&lt;p&gt;This is a regular paragraph&lt;/p&gt;
+    </div>
+
+    <h3>Advanced Selectors</h3>
+    <div class="code-example">
+/* Descendant selector */
+article p {
+    color: #333;
+}
+
+/* Child selector */
+nav > ul {
+    list-style: none;
+}
+
+/* Pseudo-classes */
+a:hover {
+    color: red;
+}
+
+a:visited {
+    color: purple;
+}
+
+/* Pseudo-elements */
+p::first-line {
+    font-weight: bold;
+}
+
+/* Attribute selector */
+input[type="email"] {
+    border: 2px solid blue;
+}
+    </div>
+
+    <h2>🌈 Colors and Backgrounds</h2>
+
+    <h3>Color Values</h3>
+    <div class="code-example">
+/* Named colors */
+color: red;
+color: blue;
+color: forestgreen;
+
+/* Hex colors */
+color: #ff0000;  /* Red */
+color: #00ff00;  /* Green */
+color: #0000ff;  /* Blue */
+
+/* RGB colors */
+color: rgb(255, 0, 0);     /* Red */
+color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+
+/* HSL colors */
+color: hsl(0, 100%, 50%);     /* Red */
+color: hsla(0, 100%, 50%, 0.5); /* Semi-transparent red */
+    </div>
+
+    <h3>Background Properties</h3>
+    <div class="code-example">
+/* Background color */
+background-color: #f0f0f0;
+
+/* Background image */
+background-image: url('pattern.png');
+
+/* Background properties combined */
+background: #f0f0f0 url('image.jpg') no-repeat center center;
+background-size: cover;
+
+/* Gradient backgrounds */
+background: linear-gradient(to right, #ff7e5f, #feb47b);
+background: radial-gradient(circle, #ff7e5f, #feb47b);
+    </div>
+
+    <div class="example-output">
+        <div class="demo-background">This has a light blue background</div>
+    </div>
+
+    <h2>🔤 Typography</h2>
+
+    <h3>Font Properties</h3>
+    <div class="code-example">
+/* Font family */
+font-family: Arial, sans-serif;
+font-family: "Times New Roman", serif;
+font-family: "Courier New", monospace;
+
+/* Font size */
+font-size: 16px;
+font-size: 1.2em;
+font-size: 120%;
+
+/* Font weight */
+font-weight: normal;
+font-weight: bold;
+font-weight: 300;
+
+/* Font style */
+font-style: normal;
+font-style: italic;
+
+/* Font shorthand */
+font: bold italic 18px Arial, sans-serif;
+    </div>
+
+    <h3>Text Properties</h3>
+    <div class="code-example">
+/* Text alignment */
+text-align: left;
+text-align: center;
+text-align: right;
+text-align: justify;
+
+/* Text decoration */
+text-decoration: none;
+text-decoration: underline;
+text-decoration: line-through;
+
+/* Text transform */
+text-transform: uppercase;
+text-transform: lowercase;
+text-transform: capitalize;
+
+/* Line height */
+line-height: 1.5;
+line-height: 24px;
+
+/* Letter and word spacing */
+letter-spacing: 2px;
+word-spacing: 5px;
+    </div>
+
+    <div class="example-output">
+        <p class="demo-red demo-large">Large red text</p>
+        <p class="demo-blue demo-bold">Bold blue text</p>
+        <p class="demo-center">Centered text</p>
+    </div>
+
+    <h2>📦 The CSS Box Model</h2>
+
+    <p>Every HTML element is essentially a rectangular box consisting of:</p>
+
+    <div class="code-example">
+/* Box model properties */
+.box {
+    width: 300px;
+    height: 200px;
+    padding: 20px;     /* Space inside the element */
+    border: 2px solid black; /* Border around the element */
+    margin: 15px;      /* Space outside the element */
+}
+
+/* Box-sizing property */
+.box-sizing-border {
+    box-sizing: border-box; /* Width includes padding and border */
+}
+    </div>
+
+    <div class="example-output">
+        <div style="width: 200px; height: 100px; padding: 20px; border: 2px solid #007bff; margin: 15px; background-color: #e9ecef;">
+            <div style="background-color: #28a745; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                Content Area
+            </div>
+        </div>
+    </div>
+
+    <h3>Spacing Properties</h3>
+    <div class="code-example">
+/* Margin (outside spacing) */
+margin: 10px;           /* All sides */
+margin: 10px 20px;      /* Top/bottom, Left/right */
+margin: 10px 15px 20px 25px; /* Top, Right, Bottom, Left */
+margin-top: 10px;
+margin-right: 15px;
+margin-bottom: 20px;
+margin-left: 25px;
+
+/* Padding (inside spacing) */
+padding: 15px;          /* All sides */
+padding: 10px 20px;     /* Top/bottom, Left/right */
+padding: 5px 10px 15px 20px; /* Top, Right, Bottom, Left */
+padding-top: 5px;
+
+/* Border */
+border: 1px solid black;
+border-width: 2px;
+border-style: solid;
+border-color: red;
+border-radius: 10px;    /* Rounded corners */
+    </div>
+
+    <div class="example-output">
+        <div class="demo-border">This element has a blue border</div>
+        <br>
+        <div class="demo-rounded">This element has rounded corners</div>
+    </div>
+
+    <h2>✨ Visual Effects</h2>
+
+    <h3>Shadows and Effects</h3>
+    <div class="code-example">
+/* Box shadow */
+box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+/* Text shadow */
+text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+/* Transparency */
+opacity: 0.8;
+
+/* Transitions */
+transition: all 0.3s ease;
+
+/* Hover effects */
+.button:hover {
+    background-color: #007bff;
+    transform: translateY(-2px);
+}
+    </div>
+
+    <div class="example-output">
+        <div class="demo-shadow">This element has a shadow</div>
+        <br>
+        <div class="demo-hover" style="padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; display: inline-block;">
+            Hover over me!
+        </div>
+    </div>
+
+    <h2>📱 Responsive Design Basics</h2>
+
+    <h3>Media Queries</h3>
+    <div class="code-example">
+/* Mobile-first approach */
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .container {
+        width: 1000px;
+        padding: 30px;
+    }
+}
+
+/* High-resolution displays */
+@media (min-resolution: 2dppx) {
+    .logo {
+        background-image: url('logo@2x.png');
+        background-size: 100px 50px;
+    }
+}
+    </div>
+
+    <h3>Responsive Units</h3>
+    <div class="code-example">
+/* Relative units */
+width: 50%;        /* Percentage of parent */
+font-size: 1.2em;  /* Relative to parent font size */
+font-size: 1.5rem; /* Relative to root font size */
+width: 50vw;       /* 50% of viewport width */
+height: 100vh;     /* 100% of viewport height */
+
+/* Absolute units */
+width: 300px;      /* Pixels */
+font-size: 14pt;   /* Points */
+    </div>
+
+    <h2>🎛️ Basic Layout</h2>
+
+    <h3>Display Property</h3>
+    <div class="code-example">
+/* Block elements (full width) */
+display: block;
+
+/* Inline elements (content width) */
+display: inline;
+
+/* Inline-block (best of both) */
+display: inline-block;
+
+/* Hide elements */
+display: none;
+visibility: hidden; /* Takes up space but invisible */
+    </div>
+
+    <h3>Flexbox (Simple Layout)</h3>
+    <div class="code-example">
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Horizontal alignment */
+    align-items: center;           /* Vertical alignment */
+    gap: 20px;                     /* Space between items */
+}
+
+.flex-item {
+    flex: 1; /* Equal width items */
+}
+    </div>
+
+    <div class="example-output">
+        <div class="demo-flex">
+            <div class="demo-flex-item">Item 1</div>
+            <div class="demo-flex-item">Item 2</div>
+            <div class="demo-flex-item">Item 3</div>
+        </div>
+    </div>
+
+    <h3>CSS Grid (Advanced Layout)</h3>
+    <div class="code-example">
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+    </div>
+
+    <div class="example-output">
+        <div class="demo-grid">
+            <div class="demo-grid-item">Grid Item 1</div>
+            <div class="demo-grid-item">Grid Item 2</div>
+            <div class="demo-grid-item">Grid Item 3</div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>🏋️ Exercise 8: Style Your Portfolio</h3>
+        <p>Create a styled personal portfolio page:</p>
+        
+        <h4>Step 1: Create the HTML structure</h4>
+        <ol>
+            <li>Create "portfolio.html" with semantic HTML</li>
+            <li>Include: header, nav, main, sections for about/skills/projects, footer</li>
+            <li>Add placeholder content for each section</li>
+        </ol>
+
+        <h4>Step 2: Create the CSS styling</h4>
+        <ol>
+            <li>Create "styles.css" and link it to your HTML</li>
+            <li>Style the layout with a color scheme of your choice</li>
+            <li>Use Google Fonts for typography</li>
+            <li>Add hover effects to navigation and buttons</li>
+        </ol>
+
+        <h4>Step 3: Make it responsive</h4>
+        <ol>
+            <li>Add media queries for mobile and tablet</li>
+            <li>Use flexbox or grid for layout</li>
+            <li>Ensure text is readable on all screen sizes</li>
+        </ol>
+
+        <h4>Required CSS techniques:</h4>
+        <ul>
+            <li>Custom color scheme and typography</li>
+            <li>Box shadows and border radius</li>
+            <li>Hover effects and transitions</li>
+            <li>Responsive design with media queries</li>
+            <li>Flexbox or CSS Grid layout</li>
+        </ul>
+    </div>
+
+    <h2>🔗 External Resources</h2>
+    <div class="code-example">
+&lt;!-- Google Fonts --&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"&gt;
+
+&lt;!-- Font Awesome Icons --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"&gt;
+
+&lt;!-- CSS Reset/Normalize --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"&gt;
+    </div>
+
+    <h2>🐛 Common CSS Mistakes</h2>
+    <ul>
+        <li><strong>Not using a CSS reset:</strong> Different browsers have different default styles</li>
+        <li><strong>Overly specific selectors:</strong> Keep selectors simple and reusable</li>
+        <li><strong>Not organizing CSS:</strong> Group related styles together</li>
+        <li><strong>Ignoring mobile design:</strong> Always design mobile-first</li>
+        <li><strong>Using too many colors/fonts:</strong> Stick to a consistent design system</li>
+        <li><strong>Not testing across browsers:</strong> Check compatibility</li>
+    </ul>
+
+    <h2>✅ Lesson 8 Checklist</h2>
+    <p>Before moving to the next lesson, make sure you can:</p>
+    <ul>
+        <li>☐ Add CSS to HTML using all three methods</li>
+        <li>☐ Use various CSS selectors (element, class, ID)</li>
+        <li>☐ Style text with fonts, colors, and spacing</li>
+        <li>☐ Understand and use the CSS box model</li>
+        <li>☐ Create visual effects with shadows and borders</li>
+        <li>☐ Write basic media queries for responsive design</li>
+        <li>☐ Use flexbox for simple layouts</li>
+    </ul>
+
+    <div class="navigation">
+        <a href="lesson-07-semantic.html">← Previous: Semantic HTML</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-09-layout.html">Next: Layout & Positioning →</a>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+        <p>HTML Tutorial for Beginners | Lesson 8 of 10</p>
+    </footer>
+</body>
+</html>
