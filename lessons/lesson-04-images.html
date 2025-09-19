@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4: Images and Media</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .code-example {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .example-output {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .exercise {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            margin: 15px 0;
+        }
+        .navigation {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .demo-image {
+            width: 200px;
+            height: 150px;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="lesson-03-links.html">← Previous: Links</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-05-lists-tables.html">Next: Lists & Tables →</a>
+    </div>
+
+    <h1>Lesson 4: Images and Media</h1>
+
+    <h2>🎯 What You'll Learn</h2>
+    <ul>
+        <li>How to add images to your web pages</li>
+        <li>Image attributes and accessibility</li>
+        <li>Responsive images for different screen sizes</li>
+        <li>Working with different image formats</li>
+        <li>Adding videos and audio to your pages</li>
+        <li>Best practices for web media</li>
+    </ul>
+
+    <h2>🖼️ Basic Image Syntax</h2>
+    <p>Images are added using the <code>&lt;img&gt;</code> element. This is a "self-closing" tag:</p>
+
+    <div class="code-example">
+&lt;img src="photo.jpg" alt="A beautiful sunset over the mountains"&gt;
+    </div>
+
+    <div class="highlight">
+        <strong>Required Attributes:</strong><br>
+        • <code>src</code> = source (path to the image file)<br>
+        • <code>alt</code> = alternative text (describes the image for screen readers and if image fails to load)
+    </div>
+
+    <h2>🏷️ Image Attributes</h2>
+
+    <h3>Essential Attributes</h3>
+    <div class="code-example">
+&lt;img src="logo.png" 
+     alt="Company Logo"
+     width="200" 
+     height="100"
+     title="Our awesome logo"&gt;
+    </div>
+
+    <div class="example-output">
+        <div class="demo-image" style="width: 200px; height: 100px;">
+            Demo Image<br>
+            (Company Logo)
+        </div>
+    </div>
+
+    <h3>Attribute Explanations</h3>
+    <ul>
+        <li><strong>src:</strong> The file path or URL to the image</li>
+        <li><strong>alt:</strong> Text description (crucial for accessibility!)</li>
+        <li><strong>width/height:</strong> Dimensions in pixels</li>
+        <li><strong>title:</strong> Tooltip text when you hover over the image</li>
+    </ul>
+
+    <h2>📁 Image File Paths</h2>
+
+    <h3>Relative Paths</h3>
+    <div class="code-example">
+&lt;!-- Same folder --&gt;
+&lt;img src="photo.jpg" alt="Photo"&gt;
+
+&lt;!-- Images subfolder --&gt;
+&lt;img src="images/photo.jpg" alt="Photo"&gt;
+
+&lt;!-- Parent folder --&gt;
+&lt;img src="../photo.jpg" alt="Photo"&gt;
+
+&lt;!-- Multiple folders --&gt;
+&lt;img src="assets/images/gallery/photo.jpg" alt="Photo"&gt;
+    </div>
+
+    <h3>Absolute Paths and URLs</h3>
+    <div class="code-example">
+&lt;!-- From website root --&gt;
+&lt;img src="/images/logo.png" alt="Logo"&gt;
+
+&lt;!-- External URL --&gt;
+&lt;img src="https://example.com/image.jpg" alt="External image"&gt;
+
+&lt;!-- Data URL (base64 encoded) --&gt;
+&lt;img src="data:image/png;base64,iVBORw0KGgoAAAANS..." alt="Inline image"&gt;
+    </div>
+
+    <h2>🎭 Image Formats</h2>
+
+    <table border="1" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+        <thead>
+            <tr style="background-color: #f8f9fa;">
+                <th>Format</th>
+                <th>Best For</th>
+                <th>Pros</th>
+                <th>Cons</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>JPEG (.jpg)</strong></td>
+                <td>Photos, complex images</td>
+                <td>Small file size, good quality</td>
+                <td>No transparency, lossy compression</td>
+            </tr>
+            <tr>
+                <td><strong>PNG (.png)</strong></td>
+                <td>Graphics, logos, transparency</td>
+                <td>Transparency support, lossless</td>
+                <td>Larger file size</td>
+            </tr>
+            <tr>
+                <td><strong>GIF (.gif)</strong></td>
+                <td>Simple animations, logos</td>
+                <td>Animation support, small size</td>
+                <td>Limited colors (256)</td>
+            </tr>
+            <tr>
+                <td><strong>SVG (.svg)</strong></td>
+                <td>Icons, simple graphics</td>
+                <td>Scalable, small size, CSS styleable</td>
+                <td>Not good for photos</td>
+            </tr>
+            <tr>
+                <td><strong>WebP (.webp)</strong></td>
+                <td>Modern web images</td>
+                <td>Excellent compression, all features</td>
+                <td>Limited browser support (older browsers)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>📱 Responsive Images</h2>
+
+    <h3>CSS-based Responsive Images</h3>
+    <div class="code-example">
+&lt;style&gt;
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+&lt;/style&gt;
+
+&lt;img src="large-photo.jpg" 
+     alt="Responsive photo" 
+     class="responsive-img"&gt;
+    </div>
+
+    <h3>HTML Responsive Images (srcset)</h3>
+    <div class="code-example">
+&lt;img src="photo-800.jpg"
+     srcset="photo-400.jpg 400w,
+             photo-800.jpg 800w,
+             photo-1200.jpg 1200w"
+     sizes="(max-width: 400px) 400px,
+            (max-width: 800px) 800px,
+            1200px"
+     alt="Responsive photo with multiple sizes"&gt;
+    </div>
+
+    <h3>Picture Element for Art Direction</h3>
+    <div class="code-example">
+&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="mobile-image.jpg"&gt;
+    &lt;source media="(max-width: 1200px)" srcset="tablet-image.jpg"&gt;
+    &lt;img src="desktop-image.jpg" alt="Responsive image with art direction"&gt;
+&lt;/picture&gt;
+    </div>
+
+    <h2>🎯 Accessibility and SEO</h2>
+
+    <h3>Writing Good Alt Text</h3>
+    <div class="code-example">
+&lt;!-- Good alt text --&gt;
+&lt;img src="cat.jpg" alt="Orange tabby cat sleeping on a blue couch"&gt;
+
+&lt;!-- Bad alt text --&gt;
+&lt;img src="cat.jpg" alt="Cat"&gt;
+&lt;img src="cat.jpg" alt="IMG_1234.jpg"&gt;
+&lt;img src="cat.jpg" alt="Picture of cat"&gt;
+
+&lt;!-- Decorative images (empty alt) --&gt;
+&lt;img src="decoration.png" alt="" role="presentation"&gt;
+    </div>
+
+    <h3>Figure and Figcaption</h3>
+    <div class="code-example">
+&lt;figure&gt;
+    &lt;img src="chart.png" alt="Sales growth chart showing 20% increase"&gt;
+    &lt;figcaption&gt;
+        Sales increased by 20% in Q3 2024 compared to Q2 2024
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+    </div>
+
+    <div class="example-output">
+        <figure>
+            <div class="demo-image">Sales Chart</div>
+            <figcaption>
+                Sales increased by 20% in Q3 2024 compared to Q2 2024
+            </figcaption>
+        </figure>
+    </div>
+
+    <h2>🎬 Video Elements</h2>
+
+    <h3>Basic Video</h3>
+    <div class="code-example">
+&lt;video controls width="400"&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;source src="movie.webm" type="video/webm"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+    </div>
+
+    <h3>Video with Additional Attributes</h3>
+    <div class="code-example">
+&lt;video controls 
+       width="400" 
+       height="300"
+       poster="video-thumbnail.jpg"
+       preload="metadata"&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;track src="subtitles.vtt" kind="subtitles" srclang="en" label="English"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;
+    </div>
+
+    <h3>Video Attributes</h3>
+    <ul>
+        <li><strong>controls:</strong> Shows play/pause buttons</li>
+        <li><strong>autoplay:</strong> Starts playing automatically (not recommended)</li>
+        <li><strong>loop:</strong> Repeats the video</li>
+        <li><strong>muted:</strong> Starts muted (required for autoplay in most browsers)</li>
+        <li><strong>poster:</strong> Image shown before video plays</li>
+        <li><strong>preload:</strong> How much to load initially (none, metadata, auto)</li>
+    </ul>
+
+    <h2>🎵 Audio Elements</h2>
+
+    <div class="code-example">
+&lt;audio controls&gt;
+    &lt;source src="song.mp3" type="audio/mpeg"&gt;
+    &lt;source src="song.ogg" type="audio/ogg"&gt;
+    Your browser does not support the audio tag.
+&lt;/audio&gt;
+    </div>
+
+    <h3>Audio with Attributes</h3>
+    <div class="code-example">
+&lt;audio controls 
+       loop 
+       preload="none"&gt;
+    &lt;source src="background-music.mp3" type="audio/mpeg"&gt;
+    &lt;source src="background-music.wav" type="audio/wav"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+    </div>
+
+    <h2>🌐 Embedding Content</h2>
+
+    <h3>YouTube Videos</h3>
+    <div class="code-example">
+&lt;iframe width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Video title"
+        frameborder="0" 
+        allowfullscreen&gt;
+&lt;/iframe&gt;
+    </div>
+
+    <h3>Google Maps</h3>
+    <div class="code-example">
+&lt;iframe src="https://www.google.com/maps/embed?pb=..."
+        width="400" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"&gt;
+&lt;/iframe&gt;
+    </div>
+
+    <div class="exercise">
+        <h3>🏋️ Exercise 4: Creating a Photo Gallery</h3>
+        <p>Create a photo gallery page with the following:</p>
+        <ol>
+            <li><strong>Create a folder structure:</strong>
+                <ul>
+                    <li>Create an "images" folder</li>
+                    <li>Find 4-6 images online (or use placeholder services)</li>
+                    <li>Save them in your images folder</li>
+                </ul>
+            </li>
+            <li><strong>Create gallery.html with:</strong>
+                <ul>
+                    <li>A main heading "My Photo Gallery"</li>
+                    <li>At least 4 images with descriptive alt text</li>
+                    <li>Use the figure and figcaption elements</li>
+                    <li>One image should be a link to a larger version</li>
+                </ul>
+            </li>
+            <li><strong>Add responsive CSS:</strong>
+                <ul>
+                    <li>Make images responsive (max-width: 100%)</li>
+                    <li>Arrange images in a grid layout</li>
+                </ul>
+            </li>
+            <li><strong>Bonus:</strong> Add a video or audio element</li>
+        </ol>
+
+        <p><strong>Placeholder services you can use:</strong></p>
+        <ul>
+            <li>https://picsum.photos/400/300 (random photos)</li>
+            <li>https://via.placeholder.com/400x300 (colored placeholders)</li>
+            <li>https://placekitten.com/400/300 (cats!)</li>
+        </ul>
+    </div>
+
+    <h2>⚡ Performance Best Practices</h2>
+
+    <h3>Optimize Image Sizes</h3>
+    <ul>
+        <li><strong>Use appropriate dimensions:</strong> Don't use a 2000px image for a 200px display</li>
+        <li><strong>Compress images:</strong> Use tools like TinyPNG or ImageOptim</li>
+        <li><strong>Choose the right format:</strong> JPEG for photos, PNG for graphics</li>
+        <li><strong>Consider WebP:</strong> Modern format with excellent compression</li>
+    </ul>
+
+    <h3>Lazy Loading</h3>
+    <div class="code-example">
+&lt;img src="image.jpg" 
+     alt="Description" 
+     loading="lazy"&gt;
+    </div>
+
+    <h3>Image Optimization Checklist</h3>
+    <ul>
+        <li>☐ Always include alt text</li>
+        <li>☐ Use appropriate file formats</li>
+        <li>☐ Optimize file sizes</li>
+        <li>☐ Provide multiple sizes for responsive design</li>
+        <li>☐ Use lazy loading for images below the fold</li>
+        <li>☐ Include width and height attributes to prevent layout shift</li>
+    </ul>
+
+    <h2>🐛 Common Mistakes</h2>
+    <ul>
+        <li><strong>Missing alt text:</strong> Always provide descriptive alt text</li>
+        <li><strong>Using images for text:</strong> Use actual text when possible</li>
+        <li><strong>Not optimizing file sizes:</strong> Large images slow down your site</li>
+        <li><strong>Hotlinking images:</strong> Don't link directly to images on other sites</li>
+        <li><strong>Autoplay videos with sound:</strong> Most browsers block this anyway</li>
+    </ul>
+
+    <h2>✅ Lesson 4 Checklist</h2>
+    <p>Before moving to the next lesson, make sure you can:</p>
+    <ul>
+        <li>☐ Add images with proper src and alt attributes</li>
+        <li>☐ Use different image formats appropriately</li>
+        <li>☐ Create responsive images that work on all devices</li>
+        <li>☐ Use figure and figcaption for image captions</li>
+        <li>☐ Embed videos and audio with controls</li>
+        <li>☐ Write descriptive alt text for accessibility</li>
+        <li>☐ Optimize images for web performance</li>
+    </ul>
+
+    <div class="navigation">
+        <a href="lesson-03-links.html">← Previous: Links</a> |
+        <a href="../README.md">Tutorial Home</a> |
+        <a href="lesson-05-lists-tables.html">Next: Lists & Tables →</a>
+    </div>
+
+    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+        <p>HTML Tutorial for Beginners | Lesson 4 of 10</p>
+    </footer>
+</body>
+</html>
