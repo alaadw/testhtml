@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Element Example</title>
+</head>
+<body>
+
+<div id="container">
+    <h1>Hello, World!</h1>
+</div>
+
+<script>
+    // Create a new paragraph element
+    var newParagraph = document.createElement("p");
+    newParagraph.textContent = "This is a new paragraph created with JavaScript.";
+
+    // Append the new paragraph to the container
+    var container = document.getElementById("container");
+    container.appendChild(newParagraph);
+</script>
+
+</body>
+</html>

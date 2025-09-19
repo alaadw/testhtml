@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Nodes Example</title>
+</head>
+<body>
+
+<div id="container">
+    <h1>Hello, World!</h1>
+</div>
+
+<script>
+    // Create a new paragraph element
+    var newParagraph = document.createElement("p"); // mean create node
+    newParagraph.textContent = "This is a new paragraph created with JavaScript.";
+    var newh = document.createElement("h2");
+    newh.textContent = "This is h2 created with js";
+    var newdiv = document.createElement("div");
+    newdiv.textContent = "this is a div created with js";
+    // Append the new paragraph to the container
+    var container = document.getElementById("container");
+    container.appendChild(newParagraph);
+    container.appendChild(newh);
+    container.appendChild(newdiv);
+      
+</script>
+
+</body>
+</html>

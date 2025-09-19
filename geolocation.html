@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocation Example</title>
+</head>
+<body>
+
+<h1>Geolocation Example</h1>
+
+<button onclick="getLocation()">Get Location</button>
+
+<p id="demo"></p>
+
+<script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        // geo location object : latitude and longitude
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+    }
+</script>
+ <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3384.5850939852457!2d35.834999084473!3d31.972150937358!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca17ed1965e8d%3A0xd93a3913affa5945!2sKing%20Hussein%20Business%20Park!5e0!3m2!1sen!2sjo!4v1571640422780!5m2!1sen!2sjo" frameborder="0" style="border:0;width: 100%;height: 100%;min-height: 300px;" allowfullscreen="" loading="lazy"></iframe>
+</body>
+</html>

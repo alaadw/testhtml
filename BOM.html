@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BOM Example</title>
+</head>
+<body>
+
+<h1>Hello, World!</h1>
+
+<script>
+    // Access the Browser Object Model (BOM)
+    // Accessing the window object which is the global object like alert, prompt, confirm, etc.
+    console.log(window);
+    // Accessing navigator object like userAgent, platform, language, etc.
+    console.log(navigator);
+    // Accessing location object like URL, protocol, host, pathname, etc.
+    console.log(location);
+    // Accessing screen object like width, height, colorDepth, etc.
+    console.log(window.screen.width);
+    console.log(window.screen.height);
+    console.log(window.screen.colorDepth);
+    console.log("host name = "+window.location.hostname);
+    // path name 
+    console.log("path name = "+window.location.pathname);
+    // full url
+    console.log("full url = "+window.location.href);
+    // protocol
+    console.log("protocol = "+window.location.protocol);
+    // navigator language
+    console.log("language = "+navigator.language);
+    // how to know if page is offline or online
+    console.log("on line = "+navigator.onLine);
+    window.prompt("sometext","defaultText");
+
+   function gotogoole(){
+    // Redirect to Google
+    // validation of form
+    window.location.href='https://google.com?dfg=dfg';
+   }
+</script>
+<!-- Button to trigger a delayed alert  after 3 seconds-->
+<!--  one time will be triggered or executed -->
+  <!-- set time out can be used in banners or popups or register    -->
+<button onclick="setTimeout(myFunction, 3000)">Try it</button>
+
+<script>
+function myFunction() {
+  alert('Hello');
+}
+</script>
+<!-- window .location-->
+       <a href="javascript:void(0)" onclick="window.history.back()">Back</a>
+       <button onclick="gotogoole()">Go to Google.com</button>
+       <a href="javascript:void(0)" onclick="gotogoole()">Go to Google.com</a>
+</body>
+</html>
